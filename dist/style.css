@@ -78,3 +78,32 @@ fieldset {
   margin: 0; }
 
 /* Components */
+.navbar {
+  top: -20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2em; }
+  .navbar .nav-wrap {
+    width: 100%;
+    background: #323232;
+    display: flex;
+    justify-content: center; }
+    .navbar .nav-wrap ul {
+      width: 80%;
+      height: 40px;
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      color: wheat; }
+  .navbar .show-arrow {
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background: #323232;
+    transform: rotate(45deg);
+    padding-top: 20px;
+    padding-left: 13px; }
+    .navbar .show-arrow img {
+      transform: rotate(-45deg); }
