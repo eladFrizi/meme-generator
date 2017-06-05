@@ -78,3 +78,43 @@ fieldset {
   margin: 0; }
 
 /* Components */
+.card {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: red; }
+
+.hidden {
+  display: none; }
+
+.home {
+  color: gray;
+  text-align: center;
+  position: relative;
+  width: 20%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
+  .home img {
+    width: 5em; }
+  .home .caption {
+    position: relative;
+    background-color: yellow;
+    width: 20%;
+    clip-path: polygon(21% 0, 100% 0%, 100% 75%, 43% 75%, 0 100%, 21% 75%, 21% 75%); }
+
+.main-container {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  background-color: whitesmoke; }
+
+body {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: 0; }
