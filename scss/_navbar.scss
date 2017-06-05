@@ -24,7 +24,10 @@
         color: wheat;
         @media screen and (min-width: 700px) {
         justify-content: space-around;
-}
+        }
+        li{
+            cursor: pointer;
+        }
     }
     }
     .show-arrow{

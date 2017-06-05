@@ -105,6 +105,8 @@ fieldset {
       @media screen and (min-width: 700px) {
         .navbar .nav-wrap ul {
           justify-content: space-around; } }
+      .navbar .nav-wrap ul li {
+        cursor: pointer; }
   .navbar .show-arrow {
     position: absolute;
     height: 70px;
@@ -161,3 +163,39 @@ body {
   height: 100%;
   width: 100%;
   margin: 0; }
+
+.about {
+  position: absolute;
+  top: 100vh;
+  background: #2eb398;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-content: space-between; }
+  @media screen and (min-width: 700px) {
+    .about {
+      padding: 5%;
+      flex-flow: row; } }
+  .about figure {
+    margin: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center; }
+    @media screen and (min-width: 700px) {
+      .about figure {
+        flex-flow: column nowrap;
+        justify-content: space-between; } }
+    .about figure img {
+      height: 200px;
+      width: 200px;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }
+    .about figure figcaption {
+      align-self: center;
+      text-align: left;
+      margin-left: 10%; }
+      .about figure figcaption h2 {
+        color: #d7fcf5;
+        text-align: center;
+        margin-left: -2em; }
+      .about figure figcaption h4 {
+        color: #20816d; }
