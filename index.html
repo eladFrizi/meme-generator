@@ -32,7 +32,7 @@
     <div class="card image-picker hidden">
       <div class="image-picker-container">
       <h1>Pick an image!! </h1>
-      <input type="search" placeholder="Search"/>
+      <input type="search" placeholder="Search" onkeydown="searchIfEnter(event,this)"/><button onclick="searchImgs(this)">Search</button>
       <div>keywords:<span>austin-powers</span><span>john-snow</span><span>chuck-norris</span><span>animal</span></div>
     <div class="image-container">
     </div>
