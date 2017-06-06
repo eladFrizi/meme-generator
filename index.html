@@ -32,6 +32,8 @@
     <div class="card image-picker hidden">
       <div class="image-picker-container">
       <h1>Pick an image!! </h1>
+      <button onclick="displayImgsByList(getDisplayedImgs())">List View</button>
+      <button onclick="displayImgsByHex(getDisplayedImgs())">Hexagon View</button>
       <input class="search-imgs-input" type="search" placeholder="Search" onkeydown="searchIfEnter(event,this)"/>
       <button class="search-btn" onclick="searchImgs(this)">Search</button>
       <button class="showall-btn" onclick="displayImgs(gImgs,110)">Show All</button>
@@ -94,7 +96,8 @@
   <script src="node_modules/smoothscroll/smoothscroll.js"></script>
   <script src="js/utils.js"></script>
   <script src="js/scroll.js"></script>
-  <script src="js/image-picker.js"></script>
+  <script src="js/image-picker/image-picker.js"></script>
+  <script src="js/image-picker/search.js"></script>
   <script src="js/cards.js"></script>
   <script src="js/main.js"></script>
   <script src="js/meme-gen.js"></script>

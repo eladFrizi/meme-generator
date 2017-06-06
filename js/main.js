@@ -10,12 +10,8 @@ var gImgs = [{ id: 1, url: "assets/meme/batman.png" ,keywords:['batman','robin',
 { id: 8, url: "assets/meme/nerd.png",keywords:['nerd','face'] },
 { id: 9, url: "assets/meme/skeleton.png",keywords:['skeleton','dead'] },
 { id: 10, url: "assets/meme/toy-story.png",keywords:['toystory','woody','buzzlightyears'] }];
-
+var gState = {isHexDisplay:true};
 //onload function
 function initApp() {
-    displayImgs(gImgs,110);
-    createKeywords(gImgs);
-    addEventListener('resize',function(){
-        displayImgs(gImgs,110);
-        });
+    imgsInitDisplay();
 }

@@ -1,6 +1,9 @@
 .image-picker{
     .img-keywords-container{
+        display: flex;
+        flex-wrap: wrap;
         span{
+            display: block;
             margin: 5px;
             &:hover{
                 cursor: pointer;
@@ -18,7 +21,7 @@
             width: 50px;
             height: 100px;
         }
-        img{
+        &>img{
             &:hover{
                 cursor: pointer;
             }
@@ -28,6 +31,5 @@
             width: 100px;
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);   
         }
-    // }
     }
 }
