@@ -14,7 +14,7 @@
       <ul>
         <li onclick="handleClick('.about')" class="btn">about</li>
         <li></li>
-        <li>contact</li>
+        <li onclick="handleClick('.contact')">contact</li>
       </ul>
     </div>
     <div class="show-arrow">
@@ -58,8 +58,30 @@
         </p>
       </figcaption>
     </figure>
+    <div class="contact">
+      <div class="form-wrap">
+        <div class="form-head">
+        <h2>Get In Touch</h2>
+        <p>In order to get in touch use the contact form below</p>
+        </div>
+      <form action="">
+          <input type="text" placeholder="name" class="contact-name"><br/>
+          <input type="email" placeholder="email" class="contact-email"> <br>
+          <input type="text" placeholder="subject" class="contact-subject"><br>
+          <textarea class="contact-text" >
+ write you message here
+          </textarea>
+          <div class="btn-container">
+            <button>send</button>
+          </div>
+      </form>
+      </div>
+      <div class="form-dis">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga distinctio incidunt eum cumque ipsam natus enim dolorem quis facere praesentium a temporibus optio possimus aliquam tempora, itaque doloremque voluptate, exercitationem.</p>
+      </div>
+    </div>
   </div>
-  <div class="contact"></div>
+  </div>
   <script src="node_modules/smoothscroll/smoothscroll.js"></script>
   <script src="js/utils.js"></script>
   <script src="js/scroll.js"></script>

@@ -157,15 +157,16 @@ fieldset {
   align-content: space-between; }
   @media screen and (min-width: 700px) {
     .about {
-      padding: 5%;
-      flex-flow: row; } }
+      flex-flow: row wrap; } }
   .about figure {
     margin: 0;
     display: flex;
     flex-flow: column nowrap;
-    align-items: center; }
+    align-items: center;
+    padding: 1em 0; }
     @media screen and (min-width: 700px) {
       .about figure {
+        width: 50%;
         flex-flow: column nowrap;
         justify-content: space-between; } }
     .about figure img {
@@ -175,13 +176,16 @@ fieldset {
     .about figure figcaption {
       align-self: center;
       text-align: left;
-      margin-left: 10%; }
+      margin-left: 10%;
+      height: 50%; }
       .about figure figcaption h2 {
         color: #d7fcf5;
         text-align: center;
         margin-left: -2em; }
       .about figure figcaption h4 {
         color: #20816d; }
+      .about figure figcaption p {
+        padding-right: 10%; }
 
 .home {
   color: gray;
@@ -207,3 +211,42 @@ fieldset {
       height: 100px;
       width: 100px;
       clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }
+
+.contact {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  background: #323232;
+  color: white;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 10px 0; }
+  .contact .form-wrap {
+    padding-left: 10%;
+    width: 70%;
+    min-width: 50%; }
+    .contact .form-wrap .form-head {
+      margin: 10px 0; }
+    .contact .form-wrap input {
+      width: 100%;
+      margin: 10px 0;
+      background: #454545;
+      border: none; }
+    .contact .form-wrap textarea {
+      height: 5em;
+      width: 100%;
+      margin: 10px 0;
+      background: #454545;
+      border: none; }
+  .contact .form-dis {
+    align-self: center;
+    width: 30%;
+    padding-left: 10px; }
+  .contact .btn-container {
+    display: flex;
+    justify-content: flex-end; }
+    .contact .btn-container button {
+      background: #2eb398;
+      border: none;
+      padding: 5px 10px; }
