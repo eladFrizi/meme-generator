@@ -196,6 +196,9 @@ fieldset {
   .home img {
     width: 5em; }
 
+.image-picker .img-keywords-container span {
+  margin: 5px; }
+
 .image-picker .image-container {
   margin-left: auto;
   margin-right: auto;
@@ -257,11 +260,3 @@ fieldset {
       background: #2eb398;
       border: none;
       padding: 5px 10px; }
-
-canvas {
-  max-width: 100%; }
-
-input {
-  position: absolute;
-  top: 0;
-  right: 0; }
