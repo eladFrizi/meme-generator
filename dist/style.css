@@ -291,3 +291,18 @@ fieldset {
       background: #2eb398;
       border: none;
       padding: 5px 10px; }
+
+.meme-generator-container {
+  display: flex;
+  flex-direction: row; }
+  .meme-generator-container .editor-contianer {
+    position: relative;
+    padding-left: 10%; }
+    .meme-generator-container .editor-contianer .edit-unit {
+      border: 1px solid black;
+      padding: 10px; }
+  .meme-generator-container .canvas-container {
+    top: 50px;
+    z-index: 10; }
+  .meme-generator-container canvas {
+    max-width: 100%; }
