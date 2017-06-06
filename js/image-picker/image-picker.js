@@ -3,11 +3,14 @@
 function imgsInitDisplay() {
     displayImgsByHex(gImgs, 110);
     createKeywords(gImgs);
-    addEventListener('resize',displayImgs);
+    addEventListener('resize',function(){
+        displayImgs();
+    });
 }
-function displayImgs() {
-    if (gState.isHexDisplay) displayImgsByHex(getDisplayedImgs(), 110);
-    else displayImgByList(getDisplayedImgs());
+function displayImgs(imgs) {
+    if(!imgs) imgs = getDisplayedImgs();
+    if (gState.isHexDisplay) displayImgsByHex(imgs, 110);
+    else displayImgByList(imgs);
 }
 function displayImgsByHex(imgs, imgWidth) {
     var elImageContainer = document.querySelector('.image-container');

@@ -8,6 +8,7 @@
   <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
 
 </head>
+
 <body onload="initApp()">
   <div class="navbar">
     <div class="nav-wrap">
@@ -22,76 +23,83 @@
     </div>
   </div>
   <div class="main-container">
-    <div class="home">
-      <h1>Meme Generator</h1>
-      <a href="#image-picker" onclick="showCard('image-picker')">
-        <img src="assets/home.jpg" />
+    <img class="jackie-chan" src="assets/home/jackie-chan.jpg" />
+    <img class="hitting-keyboard" src="assets/home/hitting-keyboard.jpg" />
+    <img class="winter-is-coming" src="assets/home/winter-is-coming.jpg" />
+    <img class="troll-face" src="assets/home/troll-face.jpg" />
+    <div class="card home">
+      <div class="home-container">
+        <h1>Meme Generator</h1>
+        <a href="#image-picker" onclick="showCard('image-picker')">
+        <img src="assets/home/main.jpg" />
         </a>
-      <h6>By Elad Frizi & Snir Shechter</h6>
+        <h6>By Elad Frizi & Snir Shechter</h6>
+      </div>
     </div>
     <div class="card image-picker hidden">
       <div class="image-picker-container">
-      <h1>Pick an image!! </h1>
-      <button onclick="displayImgsByList(getDisplayedImgs())">List View</button>
-      <button onclick="displayImgsByHex(getDisplayedImgs())">Hexagon View</button>
-      <input class="search-imgs-input" type="search" placeholder="Search" onkeydown="searchIfEnter(event,this)"/>
-      <button class="search-btn" onclick="searchImgs(this)">Search</button>
-      <button class="showall-btn" onclick="displayImgs(gImgs,110)">Show All</button>
-      <div class="img-keywords-container"></div>
-    <div class="image-container">
+        <h1>Pick an image!! </h1>
+        <button onclick="displayImgsByList(getDisplayedImgs())">List View</button>
+        <button onclick="displayImgsByHex(getDisplayedImgs(),110)">Hexagon View</button>
+        <input class="search-imgs-input" type="search" placeholder="Search" onkeydown="searchIfEnter(event,this)" />
+        <button class="search-btn" onclick="searchImgs(this)">Search</button>
+        <button class="showall-btn" onclick="displayImgs(gImgs,110)">Show All</button>
+        <div class="img-keywords-container"></div>
+        <div class="image-container">
+        </div>
+      </div>
     </div>
-    </div>
-    </div>
-    <div class="card meme-generator hidden"> MEME GENERATOR 
+    <div class="card meme-generator hidden"> MEME GENERATOR
       <div class="canvas-container"></div>
-      <input type="text" placeholder="edit me text-1" onchange="editText(1, this)" draggable="true" ondragstart="drag(event)" >
+      <input type="text" placeholder="edit me text-1" onchange="editText(1, this)" draggable="true" ondragstart="drag(event)">
       <div id="dragme" draggable="true">eladelad</p>
+      </div>
     </div>
-  </div>
-  <div class="about">
-    <figure>
-      <img src="assets/about/face.png">
-      <figcaption>
-        <h2>Barack Obame</h2>
-        <h4>first black prisdent</h4>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi accusantium ducimus, alias, repellat iusto ipsam neque quaerat
-        molestias rem nam enim maxime animi aut ullam reprehenderit tenetur. A, debitis voluptas?
-      </figcaption>
-    </figure>
-    <figure>
-      <img src="assets/about/face.png">
-      <figcaption>
-        <h2>Barack Obame</h2>
-        <h4>first black prisdent</h4>
-        <p>
+    <div class="about">
+      <figure>
+        <img src="assets/about/face.png">
+        <figcaption>
+          <h2>Barack Obame</h2>
+          <h4>first black prisdent</h4>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi accusantium ducimus, alias, repellat iusto ipsam neque quaerat
           molestias rem nam enim maxime animi aut ullam reprehenderit tenetur. A, debitis voluptas?
-        </p>
-      </figcaption>
-    </figure>
-    <div class="contact">
-      <div class="form-wrap">
-        <div class="form-head">
-        <h2>Get In Touch</h2>
-        <p>In order to get in touch use the contact form below</p>
-        </div>
-      <form action="">
-          <input type="text" placeholder="name" class="contact-name"><br/>
-          <input type="email" placeholder="email" class="contact-email"> <br>
-          <input type="text" placeholder="subject" class="contact-subject"><br>
-          <textarea class="contact-text" >
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="assets/about/face.png">
+        <figcaption>
+          <h2>Barack Obame</h2>
+          <h4>first black prisdent</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi accusantium ducimus, alias, repellat iusto ipsam neque quaerat
+            molestias rem nam enim maxime animi aut ullam reprehenderit tenetur. A, debitis voluptas?
+          </p>
+        </figcaption>
+      </figure>
+      <div class="contact">
+        <div class="form-wrap">
+          <div class="form-head">
+            <h2>Get In Touch</h2>
+            <p>In order to get in touch use the contact form below</p>
+          </div>
+          <form action="">
+            <input type="text" placeholder="name" class="contact-name"><br/>
+            <input type="email" placeholder="email" class="contact-email"> <br>
+            <input type="text" placeholder="subject" class="contact-subject"><br>
+            <textarea class="contact-text">
  write you message here
           </textarea>
-          <div class="btn-container">
-            <button>send</button>
-          </div>
-      </form>
-      </div>
-      <div class="form-dis">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga distinctio incidunt eum cumque ipsam natus enim dolorem quis facere praesentium a temporibus optio possimus aliquam tempora, itaque doloremque voluptate, exercitationem.</p>
+            <div class="btn-container">
+              <button>send</button>
+            </div>
+          </form>
+        </div>
+        <div class="form-dis">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga distinctio incidunt eum cumque ipsam natus enim
+            dolorem quis facere praesentium a temporibus optio possimus aliquam tempora, itaque doloremque voluptate, exercitationem.</p>
+        </div>
       </div>
     </div>
-  </div>
   </div>
   <script src="node_modules/smoothscroll/smoothscroll.js"></script>
   <script src="js/utils.js"></script>
