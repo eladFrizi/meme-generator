@@ -15,10 +15,17 @@ flex-direction: row;
 
 .canvas-container{
     top: 50px;
-    // position: relative;
+    position: relative;
     z-index: 10;
 }
 canvas{
     max-width: 100%;
 }
+}
+
+.drag-el{
+    margin: 0;
+    p{
+        margin: 0;
+    }
 }

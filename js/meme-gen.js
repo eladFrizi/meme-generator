@@ -89,13 +89,15 @@ function renderTxts(state) {
             var canvasCover = document.querySelector(".canvas-container");
             var textKey = state[prop];
             var divOverCanvas = document.createElement('div');
-            divOverCanvas.className = prop;
-            divOverCanvas.innerText = textKey.text;
+            divOverCanvas.className ='drag-el';
+            divOverCanvas.id = prop
+            divOverCanvas.innerHTML = `<p>${textKey.text}</p>`;
             divOverCanvas.style.maxWidth = canvasCover.width;
             divOverCanvas.style.position = 'absolute';
             divOverCanvas.style.width = '100%';
             divOverCanvas.style.overflowWrap = 'break-word';
             divOverCanvas.style.top = textKey.top + 'px';
+            console.log(divOverCanvas.style.top)
             divOverCanvas.style.fontSize = textKey.size + 'px';
             divOverCanvas.style.textAlign = textKey.textAlign;
             divOverCanvas.style.fontFamily = textKey.fontFamily;
@@ -127,19 +129,16 @@ function allowDrop(event) {
 
 
 function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.className);
-    console.log(ev.target.className)
+    ev.dataTransfer.setData("text", ev.target.id);
 }
 
-function drop(ev) {
-    // var cardOfSetTop = document.querySelector('.meme-generator').offsetTop;
-    ev.preventDefault();
-    console.log(ev.target)
+function drop(ev, eleme) {
     var data = ev.dataTransfer.getData("text");
-    var newTop = (ev.pageY - ev.target.offsetTop) + 'px';
-    console.log(newTop)
-    console.log(ev.target.offsetTop);
-    console.log(ev.pageY)
-    document.querySelector('.'+data).style.top = newTop;
-    ev.target.parentElement.appendChild(document.querySelector('.'+data));
+    console.log(eleme)
+    var newTop = (ev.pageY - eleme.offsetTop - 50) ;
+        console.log('oldtop', document.querySelector('#'+data).style.top)
+
+    document.querySelector('#'+data).style.top = newTop  + 'px';
+    gCanvasState[data].top = newTop;
+    console.log('newTop', newTop);
 }

@@ -274,6 +274,12 @@ fieldset {
       padding: 10px; }
   .meme-generator-container .canvas-container {
     top: 50px;
+    position: relative;
     z-index: 10; }
   .meme-generator-container canvas {
     max-width: 100%; }
+
+.drag-el {
+  margin: 0; }
+  .drag-el p {
+    margin: 0; }
