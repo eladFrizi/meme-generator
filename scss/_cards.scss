@@ -10,23 +10,3 @@
 .hidden{
     display: none;
 }
-
-.home{
-    color:gray;
-    text-align: center;
-    position: absolute;
-    left:50%;
-    top:50%;
-    transform: translate(-50%,-50%);
-    img{
-        width:em(80px);
-    }
-}
-.main-container{
-    position: absolute;
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
-    height: 100%;
-    width: 100%;
-}
