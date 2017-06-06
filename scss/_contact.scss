@@ -1,0 +1,48 @@
+.contact{
+        width: 100%;
+    position: relative;
+    bottom: 0;
+    background: #323232;
+    color: white;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 10px 0;
+    .form-wrap{
+        .form-head{
+            margin: 10px 0;
+        }
+        padding-left: 10%;
+        width: 70%;
+        min-width: 50%;
+        input{
+            width: 100%;
+            margin: 10px 0;
+            background: #454545;
+            border: none;
+        }
+        textarea{
+            height: 5em;
+            width: 100%;
+            margin: 10px 0;
+            background: #454545;
+            border: none;
+        }
+    }
+    .form-dis{
+        align-self: center;
+        width: 30%;
+        padding-left: 10px;
+    }
+
+    .btn-container{
+        display: flex;
+        justify-content: flex-end;
+            button{
+                background: #2eb398;
+                border: none;
+                padding: 5px 10px;
+            }
+    }
+
+}

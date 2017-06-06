@@ -7,8 +7,8 @@
     flex-flow: column;
     align-content: space-between;
     @media screen and (min-width: 700px) {
-        padding: 5%;
-        flex-flow: row;
+        // padding: 5%;
+        flex-flow: row wrap;
         }
 
 
@@ -17,7 +17,9 @@
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
+        padding: 1em 0;
         @media screen and (min-width: 700px) {
+        width: 50%;
         flex-flow: column nowrap;
         justify-content: space-between;
         }
@@ -31,6 +33,7 @@
             align-self: center;
             text-align: left;
             margin-left: 10%;
+            height: 50%;
             h2{
                 color: #d7fcf5;
                 text-align: center;
@@ -40,6 +43,7 @@
                 color: #20816d;
             }
             p{
+            padding-right: 10%;
             }
         }
     }
