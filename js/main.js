@@ -1,10 +1,10 @@
 'use strict';
 
 var gImgs = [{ id: 1, url: "assets/meme/batman.png" ,keywords:['batman','robin','bitchslap'] },
-{ id: 2, url: "assets/meme/cat.png",keywords:['cat','face'] },
+{ id: 2, url: "assets/meme/cat.png",keywords:['cat','face','animal'] },
 { id: 3, url: "assets/meme/di-caprio.png",keywords:['di-caprio','cheers'] },
-{ id: 4, url: "assets/meme/dog.png",keywords:['dog','face'] },
-{ id: 5, url: "assets/meme/facepalm.png",keywords:['starwars','facepalm'] },
+{ id: 4, url: "assets/meme/dog.png",keywords:['dog','face','animal'] },
+{ id: 5, url: "assets/meme/facepalm.png",keywords:['startrek','facepalm'] },
 { id: 6, url: "assets/meme/history.png",keywords:['history','teach'] },
 { id: 7, url: "assets/meme/lord-of-the-rings.png",keywords:['lotr','lordoftherings','boromir'] },
 { id: 8, url: "assets/meme/nerd.png",keywords:['nerd','face'] },
@@ -14,6 +14,7 @@ var gImgs = [{ id: 1, url: "assets/meme/batman.png" ,keywords:['batman','robin',
 //onload function
 function initApp() {
     displayImgs(gImgs,110);
+    createKeywords(gImgs);
     addEventListener('resize',function(){
         displayImgs(gImgs,110);
         });

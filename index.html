@@ -32,8 +32,10 @@
     <div class="card image-picker hidden">
       <div class="image-picker-container">
       <h1>Pick an image!! </h1>
-      <input type="search" placeholder="Search" onkeydown="searchIfEnter(event,this)"/><button onclick="searchImgs(this)">Search</button>
-      <div>keywords:<span>austin-powers</span><span>john-snow</span><span>chuck-norris</span><span>animal</span></div>
+      <input class="search-imgs-input" type="search" placeholder="Search" onkeydown="searchIfEnter(event,this)"/>
+      <button class="search-btn" onclick="searchImgs(this)">Search</button>
+      <button class="showall-btn" onclick="displayImgs(gImgs,110)">Show All</button>
+      <div class="img-keywords-container"></div>
     <div class="image-container">
     </div>
     </div>
@@ -97,7 +99,6 @@
   <script src="js/utils.js"></script>
   <script src="js/scroll.js"></script>
   <script src="js/image-picker.js"></script>
-  <script src="js/meme-generator.js"></script>
   <script src="js/cards.js"></script>
   <script src="js/main.js"></script>
   <script src="js/meme-gen.js"></script>

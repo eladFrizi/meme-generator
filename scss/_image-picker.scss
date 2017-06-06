@@ -1,8 +1,12 @@
 .image-picker{
-    // .image-picker-container{
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
+    .img-keywords-container{
+        span{
+            margin: 5px;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
     .image-container{
         margin-left: auto;
         margin-right: auto;
