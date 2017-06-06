@@ -5,7 +5,18 @@
 display: flex;
 flex-direction: row;
 .editor-contianer{
+    position: relative;
     padding-left: 10%;
+    .edit-unit{
+        border: 1px solid black;
+        padding: 10px;
+    }
+}
+
+.canvas-container{
+    top: 50px;
+    // position: relative;
+    z-index: 10;
 }
 canvas{
     max-width: 100%;

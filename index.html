@@ -42,10 +42,13 @@
     </div>
     <div class="card meme-generator hidden"> 
           <div class="meme-generator-container">
-          <div class="canvas-container"></div >
+          <div class="canvas-container" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
           <div class="editor-contianer">
-              <h2> Text - Top Editor </h2>
-            <input type="text" placeholder="edit me text-1" onchange="editText(1, this)" >
+            <div class="edit-unit">
+                  <h2> Text - Top Editor </h2>
+                  <input type="text" placeholder="edit me text-1" onchange="editText(1, this)" > <br>
+                  size <input type="range" min="10" max="100" onchange="editTextSize(1, this)">
+            <div>
           </div>
           </div>
         </div>
@@ -96,6 +99,7 @@
   </div>
   </div>
   <script src="node_modules/smoothscroll/smoothscroll.js"></script>
+  <script src="js/interact.js"></script>
   <script src="js/utils.js"></script>
   <script src="js/scroll.js"></script>
   <script src="js/image-picker.js"></script>
