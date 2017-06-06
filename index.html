@@ -38,7 +38,11 @@
     </div>
     </div>
     </div>
-    <div class="card meme-generator hidden"> MEME GENERATOR </div>
+    <div class="card meme-generator hidden"> MEME GENERATOR 
+      <div class="canvas-container"></div>
+      <input type="text" placeholder="edit me text-1" onchange="editText(1, this)" draggable="true" ondragstart="drag(event)" >
+      <div id="dragme" draggable="true">eladelad</p>
+    </div>
   </div>
   <div class="about">
     <figure>
@@ -92,6 +96,7 @@
   <script src="js/meme-generator.js"></script>
   <script src="js/cards.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/meme-gen.js"></script>
 </body>
 
 </html>
