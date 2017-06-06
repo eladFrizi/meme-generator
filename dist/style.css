@@ -129,8 +129,8 @@ fieldset {
 
 .card {
   position: absolute;
-  width: 1000px;
-  height: 1000px;
+  width: 90%;
+  height: 90%;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -155,8 +155,7 @@ fieldset {
   padding: 0;
   box-sizing: border-box;
   height: 100%;
-  width: 100%;
-  background-color: whitesmoke; }
+  width: 100%; }
 
 .about {
   position: absolute;

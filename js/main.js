@@ -17,10 +17,8 @@ function showCard(cardStr, navBtn) {
     var newCard = getCardByClass(cardStr);
     console.log(newCard);
     fadeOut(oldCard);
-    // document.querySelector('.current').classList.remove('current');
     setTimeout(function () {
         fadeIn(newCard);
-        // if(!navBtn) navBtn.classList.add('current');
     }, 250);
 
     gCurrCardStr = cardStr;
