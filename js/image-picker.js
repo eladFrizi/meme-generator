@@ -12,7 +12,8 @@ function displayImgs(imgs, imgWidth) {
         }
         var elImg = document.createElement('img');
         elImg.setAttribute('src', imgs[i].url);
-        elImg.setAttribute('onclick', 'generateMeme(this)');
+        elImg.setAttribute('data-id', imgs[i].id)
+        elImg.setAttribute('onclick',`imgClicked(${imgs[i].id}), event`);
         elImageContainer.appendChild(elImg);
         if (count === imgCountOfLine) elImg.style.marginLeft = '65px';
         count++;

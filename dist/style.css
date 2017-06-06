@@ -245,7 +245,11 @@ fieldset {
   .contact .form-dis {
     align-self: center;
     width: 30%;
-    padding-left: 10px; }
+    padding-left: 10px;
+    display: none; }
+    @media screen and (min-width: 700px) {
+      .contact .form-dis {
+        display: initial; } }
   .contact .btn-container {
     display: flex;
     justify-content: flex-end; }
@@ -253,3 +257,11 @@ fieldset {
       background: #2eb398;
       border: none;
       padding: 5px 10px; }
+
+canvas {
+  max-width: 100%; }
+
+input {
+  position: absolute;
+  top: 0;
+  right: 0; }
