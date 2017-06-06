@@ -1,33 +1,21 @@
 'use strict';
 
-var gImgs = [{ id: 1, url: "assets/meme/batman.png" },
-{ id: 2, url: "assets/meme/cat.png" },
-{ id: 3, url: "assets/meme/di-caprio.png" },
-{ id: 4, url: "assets/meme/dog.png" },
-{ id: 5, url: "assets/meme/facepalm.png" },
-{ id: 6, url: "assets/meme/history.png" },
-{ id: 7, url: "assets/meme/lord-of-the-rings.png" },
-{ id: 8, url: "assets/meme/nerd.png" },
-{ id: 9, url: "assets/meme/skeleton.png" },
-{ id: 10, url: "assets/meme/toy-story.png" }];
+var gImgs = [{ id: 1, url: "assets/meme/batman.png" ,txts:['batman','robin','bitchslap'] },
+{ id: 2, url: "assets/meme/cat.png",txts:['cat','face'] },
+{ id: 3, url: "assets/meme/di-caprio.png",txts:['di-caprio','cheers'] },
+{ id: 4, url: "assets/meme/dog.png",txts:['dog','face'] },
+{ id: 5, url: "assets/meme/facepalm.png",txts:['starwars','facepalm'] },
+{ id: 6, url: "assets/meme/history.png",txts:['history','teach'] },
+{ id: 7, url: "assets/meme/lord-of-the-rings.png",txts:['lotr','lordoftherings','boromir'] },
+{ id: 8, url: "assets/meme/nerd.png",txts:['nerd'] },
+{ id: 9, url: "assets/meme/skeleton.png",txts:['skeleton','dead'] },
+{ id: 10, url: "assets/meme/toy-story.png",txts:['toystory','woody','buzzlightyears','show'] }];
 
 //onload function
 function initApp() {
-    displayImgs(gImgs);
-}
-
-function displayImgs(imgs) {
-    var elImageContainer = document.querySelector('.image-container');
-    var imgCountOfLine = Math.floor((document.body.offsetWidth*90)/100 / 110);
-    var count = 0;
-    for (var i = 0; i < imgs.length; i++) {
-        if (count === (imgCountOfLine * 2) - 1) {
-            count = 0;
-            elImageContainer.appendChild(document.createElement('br'));
-        }
-        var elImg = document.createElement('img');
-        elImg.setAttribute('src', imgs[i].url);
-        elImageContainer.appendChild(elImg);
-        count++;
-    }
+    displayImgs(gImgs,110);
+    addEventListener('resize',function(){
+        console.log('RESIZE');
+        displayImgs(gImgs,110);
+        });
 }

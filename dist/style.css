@@ -141,8 +141,7 @@ fieldset {
   height: 90%;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: red; }
+  transform: translate(-50%, -50%); }
 
 .hidden {
   display: none; }
@@ -197,20 +196,28 @@ fieldset {
   .home img {
     width: 5em; }
 
-.image-picker {
-  text-align: center; }
-  .image-picker .image-container {
-    margin-top: 50px; }
-    .image-picker .image-container div {
+.image-picker .image-picker-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .image-picker .image-picker-container .image-container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    height: 100%;
+    width: 100%; }
+    .image-picker .image-picker-container .image-container div {
       display: inline-block;
       width: 50px;
       height: 100px; }
-    .image-picker .image-container img {
+    .image-picker .image-picker-container .image-container img {
       margin-top: -20px;
       margin-left: 10px;
       height: 100px;
       width: 100px;
       clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }
+      .image-picker .image-picker-container .image-container img:hover {
+        cursor: pointer; }
 
 .contact {
   width: 100%;

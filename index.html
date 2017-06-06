@@ -6,8 +6,6 @@
   <title>Coding Academy</title>
   <link rel="stylesheet" href="dist/style.css">
 </head>
-
-
 <body onload="initApp()">
   <div class="navbar">
     <div class="nav-wrap">
@@ -30,10 +28,13 @@
       <h6>By Elad Frizi & Snir Shechter</h6>
     </div>
     <div class="card image-picker hidden">
+      <div class="image-picker-container">
       <h1>Pick an image!! </h1>
       <input type="search" placeholder="Search"/>
       <div>keywords:<span>austin-powers</span><span>john-snow</span><span>chuck-norris</span><span>animal</span></div>
-    <div class="image-container"></div>
+    <div class="image-container">
+    </div>
+    </div>
     </div>
     <div class="card meme-generator hidden"> MEME GENERATOR </div>
   </div>
@@ -85,6 +86,8 @@
   <script src="node_modules/smoothscroll/smoothscroll.js"></script>
   <script src="js/utils.js"></script>
   <script src="js/scroll.js"></script>
+  <script src="js/image-picker.js"></script>
+  <script src="js/meme-generator.js"></script>
   <script src="js/cards.js"></script>
   <script src="js/main.js"></script>
 </body>
