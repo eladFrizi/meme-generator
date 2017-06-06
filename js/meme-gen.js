@@ -97,13 +97,14 @@ function renderTxts(state) {
             divOverCanvas.style.width = '100%';
             divOverCanvas.style.overflowWrap = 'break-word';
             divOverCanvas.style.top = textKey.top + 'px';
-            console.log(divOverCanvas.style.top)
             divOverCanvas.style.fontSize = textKey.size + 'px';
             divOverCanvas.style.textAlign = textKey.textAlign;
             divOverCanvas.style.fontFamily = textKey.fontFamily;
             divOverCanvas.style.zIndex = 50;
             divOverCanvas.setAttribute('ondragstart', "drag(event)")
             divOverCanvas.setAttribute('draggable', "true")
+            divOverCanvas.setAttribute('contenteditable', 'true')
+            divOverCanvas.setAttribute('onblur', 'updateModelTxt(this)')
             canvasCover.appendChild(divOverCanvas)
         }
     }
@@ -132,13 +133,18 @@ function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 }
 
-function drop(ev, eleme) {
+function drop(ev, fatherEl) {
     var data = ev.dataTransfer.getData("text");
-    console.log(eleme)
-    var newTop = (ev.pageY - eleme.offsetTop - 50) ;
+    var newTop = (ev.pageY - fatherEl.offsetTop - 50) ;
         console.log('oldtop', document.querySelector('#'+data).style.top)
-
     document.querySelector('#'+data).style.top = newTop  + 'px';
     gCanvasState[data].top = newTop;
     console.log('newTop', newTop);
+}
+
+
+function updateModelTxt(changedEl){
+    var textKey = changedEl.id;
+    console.log(changedEl.innerText)
+    gCanvasState[textKey].text = changedEl.innerText
 }
