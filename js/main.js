@@ -15,12 +15,12 @@ function showCard(cardStr, navBtn) {
     if (cardStr === gCurrCardStr) return;
     var oldCard = getCardByClass(gCurrCardStr);
     var newCard = getCardByClass(cardStr);
-
+    console.log(newCard);
     fadeOut(oldCard);
-    document.querySelector('.current').classList.remove('current');
+    // document.querySelector('.current').classList.remove('current');
     setTimeout(function () {
         fadeIn(newCard);
-        navBtn.classList.add('current');
+        // if(!navBtn) navBtn.classList.add('current');
     }, 250);
 
     gCurrCardStr = cardStr;
@@ -30,10 +30,9 @@ function fadeOut(el) {
     var op = 1;
     var sc = 1;
     el.style.opacity = op;
-    console.log('op ' + op);
     var timer = setInterval(function () {
         if (op <= 0) {
-            el.style.display = 'none';
+            el.classList.add('hidden');
             el.style.transform = 'translate(-50%,-50%) scale(1)';
             clearInterval(timer);
         }
@@ -42,18 +41,19 @@ function fadeOut(el) {
         op -= 0.1;
         sc -= 0.03;
     }, 25);
-    console.log(el.style.opacity);
 }
 
 function fadeIn(el) {
     var op = 0;
     var sc = 0.7;
     el.style.opacity = op;
-    el.style.display = 'inline-block';
+    el.classList.remove('hidden');
+    console.log(el);
     var timer = setInterval(function () {
         if (op >= 1.0) {
             clearInterval(timer);
             el.style.transform = 'translate(-50%,-50%) scale(1)';
+            return;
         }
         el.style.opacity = op;
         el.style.transform = 'translate(-50%,-50%) scale(' + sc + ')';

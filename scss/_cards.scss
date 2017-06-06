@@ -1,5 +1,7 @@
 .card{
-    position: relative;
+    position: absolute;
+    width: 1000px;
+    height: 1000px;
     left:50%;
     top:50%;
     transform: translate(-50%,-50%);
@@ -12,20 +14,12 @@
 .home{
     color:gray;
     text-align: center;
-    position: relative;
-    width:20%;
-    
+    position: absolute;
     left:50%;
     top:50%;
     transform: translate(-50%,-50%);
     img{
         width:em(80px);
-    }
-    .caption{
-    position: relative;
-    background-color:yellow;
-    width:20%;
-    clip-path: polygon(21% 0, 100% 0%, 100% 75%, 43% 75%, 0 100%, 21% 75%, 21% 75%);
     }
 }
 .main-container{
@@ -36,11 +30,4 @@
     height: 100%;
     width: 100%;
     background-color: whitesmoke;
-}
-
-body{
-    position: absolute;
-    height:100%;
-    width: 100%;
-    margin: 0;
 }
