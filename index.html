@@ -8,11 +8,11 @@
 </head>
 
 
- <body>
-    <div class="navbar">
+<body>
+  <div class="navbar">
     <div class="nav-wrap">
       <ul>
-        <li>about</li>
+        <li onclick="handleClick('.about')" class="btn">about</li>
         <li></li>
         <li>contact</li>
       </ul>
@@ -21,21 +21,43 @@
       <img src="assets/logo.png">
     </div>
   </div>
-    <div class="main-container">
-      <div class="home">
-        <h1>Meme Generator</h1>
-        <a href="#image-picker" onclick="showCard('image-picker')"><img src="assets/home.jpg" />
+  <<<<<<< HEAD <div class="main-container">
+    <div class="home">
+      <h1>Meme Generator</h1>
+      <a href="#image-picker" onclick="showCard('image-picker')"><img src="assets/home.jpg" />
         <!--<div class="caption">Click on me to start!</div>-->
         </a>
-        <h6>By Elad Frizi & Snir Shechter</h6>
+      <h6>By Elad Frizi & Snir Shechter</h6>
       <div class="card image-picker hidden"> IMAGE-PICKER </div>
       <div class="card meme-generator hidden"> MEME GENERATOR </div>
     </div>
-    <div class="about"></div>
+    <div class="about">
+      <figure>
+        <img src="assets/about/face.png">
+        <figcaption>
+          <h2>Barack Obame</h2>
+          <h4>first black prisdent</h4>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi accusantium ducimus, alias, repellat iusto ipsam neque quaerat
+          molestias rem nam enim maxime animi aut ullam reprehenderit tenetur. A, debitis voluptas?
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="assets/about/face.png">
+        <figcaption>
+          <h2>Barack Obame</h2>
+          <h4>first black prisdent</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi accusantium ducimus, alias, repellat iusto ipsam neque quaerat
+            molestias rem nam enim maxime animi aut ullam reprehenderit tenetur. A, debitis voluptas?
+          </p>
+        </figcaption>
+      </figure>
+    </div>
     <div class="contact"></div>
+    <script src="node_modules/smoothscroll/smoothscroll.js"></script>
     <script src="js/utils.js"></script>
+    <script src="js/scroll.js"></script>
     <script src="js/main.js"></script>
- </body>
-
+</body>
 
 </html>

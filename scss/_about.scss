@@ -1,0 +1,46 @@
+.about{
+    position: absolute;
+    top: 100vh;
+    background: #2eb398;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-content: space-between;
+    @media screen and (min-width: 700px) {
+        padding: 5%;
+        flex-flow: row;
+        }
+
+
+    figure{
+        margin: 0;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        @media screen and (min-width: 700px) {
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        }
+
+        img{
+            height: 200px;
+            width: 200px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+        figcaption{
+            align-self: center;
+            text-align: left;
+            margin-left: 10%;
+            h2{
+                color: #d7fcf5;
+                text-align: center;
+                margin-left: -2em;
+            }
+            h4{
+                color: #20816d;
+            }
+            p{
+            }
+        }
+    }
+}
