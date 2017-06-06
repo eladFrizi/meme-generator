@@ -261,7 +261,10 @@ fieldset {
 canvas {
   max-width: 100%; }
 
-input {
-  position: absolute;
-  top: 0;
-  right: 0; }
+.meme-generator-container {
+  display: flex;
+  flex-direction: row; }
+  .meme-generator-container .editor-contianer {
+    padding-left: 10%; }
+  .meme-generator-container canvas {
+    max-width: 100%; }

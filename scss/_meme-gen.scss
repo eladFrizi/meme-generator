@@ -2,8 +2,14 @@ canvas{
     max-width: 100%;
 }
 
-input{
-    position: absolute;
-    top: 0;
-    right: 0;
+
+.meme-generator-container{
+display: flex;
+flex-direction: row;
+.editor-contianer{
+    padding-left: 10%;
+}
+canvas{
+    max-width: 100%;
+}
 }
