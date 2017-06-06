@@ -1,6 +1,9 @@
 .image-picker{
     .img-keywords-container{
+        display: flex;
+        flex-wrap: wrap;
         span{
+            display: block;
             margin: 5px;
             &:hover{
                 cursor: pointer;
@@ -13,6 +16,11 @@
         margin-top:50px;
         height: 100%;
         width: 100%;
+        table{
+            img{
+                margin-top: 0;
+            }
+        }
         div{
             display: inline-block;
             width: 50px;
@@ -28,6 +36,5 @@
             width: 100px;
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);   
         }
-    // }
     }
 }
