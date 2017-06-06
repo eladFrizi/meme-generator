@@ -68,6 +68,14 @@ html {
   font-size: 16px;
   margin: 0; }
 
+.main-container {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%; }
+
 body {
   margin: 0; }
 
@@ -139,24 +147,6 @@ fieldset {
 .hidden {
   display: none; }
 
-.home {
-  color: gray;
-  text-align: center;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%); }
-  .home img {
-    width: 5em; }
-
-.main-container {
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  height: 100%;
-  width: 100%; }
-
 .about {
   position: absolute;
   top: 100vh;
@@ -192,3 +182,28 @@ fieldset {
         margin-left: -2em; }
       .about figure figcaption h4 {
         color: #20816d; }
+
+.home {
+  color: gray;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
+  .home img {
+    width: 5em; }
+
+.image-picker {
+  text-align: center; }
+  .image-picker .image-container {
+    margin-top: 50px; }
+    .image-picker .image-container div {
+      display: inline-block;
+      width: 50px;
+      height: 100px; }
+    .image-picker .image-container img {
+      margin-top: -20px;
+      margin-left: 10px;
+      height: 100px;
+      width: 100px;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }

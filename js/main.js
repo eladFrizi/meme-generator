@@ -1,61 +1,33 @@
 'use strict';
 
-var gCurrCardStr = 'home';
+var gImgs = [{ id: 1, url: "assets/meme/batman.png" },
+{ id: 2, url: "assets/meme/cat.png" },
+{ id: 3, url: "assets/meme/di-caprio.png" },
+{ id: 4, url: "assets/meme/dog.png" },
+{ id: 5, url: "assets/meme/facepalm.png" },
+{ id: 6, url: "assets/meme/history.png" },
+{ id: 7, url: "assets/meme/lord-of-the-rings.png" },
+{ id: 8, url: "assets/meme/nerd.png" },
+{ id: 9, url: "assets/meme/skeleton.png" },
+{ id: 10, url: "assets/meme/toy-story.png" }];
 
-function toggleNavbar() {
-    var elNavbar = document.querySelector('.navbar');
-    elNavbar.classList.toggle('offcanvas');
+//onload function
+function initApp() {
+    displayImgs(gImgs);
 }
 
-function getCardByClass(className) {
-    return document.querySelector('.' + className);
-}
-
-function showCard(cardStr, navBtn) {
-    if (cardStr === gCurrCardStr) return;
-    var oldCard = getCardByClass(gCurrCardStr);
-    var newCard = getCardByClass(cardStr);
-    console.log(newCard);
-    fadeOut(oldCard);
-    setTimeout(function () {
-        fadeIn(newCard);
-    }, 250);
-
-    gCurrCardStr = cardStr;
-}
-
-function fadeOut(el) {
-    var op = 1;
-    var sc = 1;
-    el.style.opacity = op;
-    var timer = setInterval(function () {
-        if (op <= 0) {
-            el.classList.add('hidden');
-            el.style.transform = 'translate(-50%,-50%) scale(1)';
-            clearInterval(timer);
+function displayImgs(imgs) {
+    var elImageContainer = document.querySelector('.image-container');
+    var imgCountOfLine = Math.floor((document.body.offsetWidth*90)/100 / 110);
+    var count = 0;
+    for (var i = 0; i < imgs.length; i++) {
+        if (count === (imgCountOfLine * 2) - 1) {
+            count = 0;
+            elImageContainer.appendChild(document.createElement('br'));
         }
-        el.style.opacity = op;
-        el.style.transform = 'translate(-50%,-50%) scale(' + sc + ')';
-        op -= 0.1;
-        sc -= 0.03;
-    }, 25);
-}
-
-function fadeIn(el) {
-    var op = 0;
-    var sc = 0.7;
-    el.style.opacity = op;
-    el.classList.remove('hidden');
-    console.log(el);
-    var timer = setInterval(function () {
-        if (op >= 1.0) {
-            clearInterval(timer);
-            el.style.transform = 'translate(-50%,-50%) scale(1)';
-            return;
-        }
-        el.style.opacity = op;
-        el.style.transform = 'translate(-50%,-50%) scale(' + sc + ')';
-        sc += 0.03;
-        op += 0.1;
-    }, 25);
+        var elImg = document.createElement('img');
+        elImg.setAttribute('src', imgs[i].url);
+        elImageContainer.appendChild(elImg);
+        count++;
+    }
 }

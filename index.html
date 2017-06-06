@@ -8,7 +8,7 @@
 </head>
 
 
-<body>
+<body onload="initApp()">
   <div class="navbar">
     <div class="nav-wrap">
       <ul>
@@ -29,36 +29,42 @@
         </a>
       <h6>By Elad Frizi & Snir Shechter</h6>
     </div>
-      <div class="card image-picker hidden"> IMAGE-PICKER </div>
-      <div class="card meme-generator hidden"> MEME GENERATOR </div>
+    <div class="card image-picker hidden">
+      <h1>Pick an image!! </h1>
+      <input type="search" placeholder="Search"/>
+      <div>keywords:<span>austin-powers</span><span>john-snow</span><span>chuck-norris</span><span>animal</span></div>
+    <div class="image-container"></div>
     </div>
-    <div class="about">
-      <figure>
-        <img src="assets/about/face.png">
-        <figcaption>
-          <h2>Barack Obame</h2>
-          <h4>first black prisdent</h4>
+    <div class="card meme-generator hidden"> MEME GENERATOR </div>
+  </div>
+  <div class="about">
+    <figure>
+      <img src="assets/about/face.png">
+      <figcaption>
+        <h2>Barack Obame</h2>
+        <h4>first black prisdent</h4>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi accusantium ducimus, alias, repellat iusto ipsam neque quaerat
+        molestias rem nam enim maxime animi aut ullam reprehenderit tenetur. A, debitis voluptas?
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="assets/about/face.png">
+      <figcaption>
+        <h2>Barack Obame</h2>
+        <h4>first black prisdent</h4>
+        <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi accusantium ducimus, alias, repellat iusto ipsam neque quaerat
           molestias rem nam enim maxime animi aut ullam reprehenderit tenetur. A, debitis voluptas?
-        </figcaption>
-      </figure>
-      <figure>
-        <img src="assets/about/face.png">
-        <figcaption>
-          <h2>Barack Obame</h2>
-          <h4>first black prisdent</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi accusantium ducimus, alias, repellat iusto ipsam neque quaerat
-            molestias rem nam enim maxime animi aut ullam reprehenderit tenetur. A, debitis voluptas?
-          </p>
-        </figcaption>
-      </figure>
-    </div>
-    <div class="contact"></div>
-    <script src="node_modules/smoothscroll/smoothscroll.js"></script>
-    <script src="js/utils.js"></script>
-    <script src="js/scroll.js"></script>
-    <script src="js/main.js"></script>
+        </p>
+      </figcaption>
+    </figure>
+  </div>
+  <div class="contact"></div>
+  <script src="node_modules/smoothscroll/smoothscroll.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/cards.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>
