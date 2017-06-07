@@ -27,8 +27,8 @@ function getCanvasState(imgObj) {
         text: 'edit me text1',
         fillStyle: 'red',
         textAlign: 'center',
-        left: 0,
-        top: 0,
+        left: 100,
+        top: 100,
         size: 30,
         fontFamily: 'Fantasy'
     }
@@ -36,7 +36,7 @@ function getCanvasState(imgObj) {
         text: 'edit me text2',
         fillStyle: 'red',
         textAlign: 'left',
-        left: 0,
+        left: 100,
         top: 10,
         size: 30,
         fontFamily: 'Ariel'
@@ -56,6 +56,7 @@ function createCanvasWithImage(canvasState) {
     var ctx = c.getContext("2d");
     ctx.drawImage(elImg, 0, 0);
 }
+
 
 function renderTxts(state) {
     createCanvasWithImage(state)
@@ -181,12 +182,20 @@ function printOnCanvas(){
 }
 
 
-    // gCanvasState.text1 = {
-    //     text: 'edit me text1',
-    //     fillStyle: 'red',
-    //     textAlign: 'center',
-    //     left: 0,
-    //     top: 100,
-    //     size: 30,
-    //     fontFamily: 'fantasy'
-    // }
+function convertCanvasToImage() {
+	var image = new Image();
+	image.src = document.querySelector('canvas').toDataURL("image/png");
+	return image;
+}
+
+function openModalAndPrintPImage(elImage){
+    var elModal = document.querySelector('.modal-img')
+    elModal.appendChild(elImage);
+    elModal.style.display = 'block'
+}
+
+function finishCLicked(){
+    printOnCanvas()
+    var elImage= convertCanvasToImage();
+    openModalAndPrintPImage(elImage)
+}
