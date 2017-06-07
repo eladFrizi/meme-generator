@@ -38,15 +38,16 @@
     </div>
     <div class="card image-picker hidden">
       <div class="image-picker-container">
-        <h1>Pick an image!! </h1>
-        <button onclick="displayImgsByList(getDisplayedImgs())">List View</button>
-        <button onclick="displayImgsByHex(getDisplayedImgs(),110)">Hexagon View</button>
-        <input class="search-imgs-input" type="search" placeholder="Search" onkeydown="searchIfEnter(event,this)" />
+        <br />
+        <br />
+        <button onclick="changeDisplayStyle(false)">List View</button>
+        <button onclick="changeDisplayStyle(true)">Hexagon View</button>
+        <button class="showall-btn" onclick="displayAllImgs()">Show All</button>
+        <input class="search-imgs-input" type="search" placeholder="Search" onkeydown="searchIfClickedEnter(event,this)" />
         <button class="search-btn" onclick="searchImgs(this)">Search</button>
-        <button class="showall-btn" onclick="displayImgs(gImgs,110)">Show All</button>
+        <div class="img-page-container"></div>
         <div class="img-keywords-container"></div>
-        <div class="image-container">
-        </div>
+        <div class="image-container"></div>
       </div>
     </div>
     <div class="card meme-generator hidden">
@@ -76,17 +77,18 @@
       <figure>
         <img src="assets/about/face.png">
         <figcaption>
-          <h2>Barack Obame</h2>
-          <h4>first black prisdent</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi accusantium ducimus, alias, repellat iusto ipsam
-            neque quaerat molestias rem nam enim maxime animi aut ullam reprehenderit tenetur. A, debitis voluptas?
+          <h2>Snir Shechter</h2>
+          <h4>Frontend Programmer</h4>
+          <p>23 years old, born and raised in Yehud,Israel. with high-school education, 4.5 years as a soldier in the IDF and no experience at all, i plan on hard-working my way onto the frontend industry.
+            in the near future, plans are to start B.sc studies in computer-science, preferably in Technion university in Haifa,Israel.
+          </p>
         </figcaption>
       </figure>
       <figure>
         <img src="assets/about/face.png">
         <figcaption>
-          <h2>Barack Obame</h2>
-          <h4>first black prisdent</h4>
+          <h2>Elad Frizi</h2>
+          <h4>Frontend Programmer</h4>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi accusantium ducimus, alias, repellat iusto ipsam neque quaerat
             molestias rem nam enim maxime animi aut ullam reprehenderit tenetur. A, debitis voluptas?
@@ -97,15 +99,13 @@
         <div class="form-wrap">
           <div class="form-head">
             <h2>Get In Touch</h2>
-            <p>In order to get in touch use the contact form below</p>
+            <h5>In order to get in touch use the contact form below</h5>
           </div>
           <form action="">
-            <input type="text" placeholder="name" class="contact-name"><br/>
-            <input type="email" placeholder="email" class="contact-email"> <br>
-            <input type="text" placeholder="subject" class="contact-subject"><br>
-            <textarea class="contact-text">
- write you message here
-          </textarea>
+            <input type="text" placeholder="Name (Required)" class="contact-name"><br/>
+            <input type="email" placeholder="Email (Required)" class="contact-email"> <br>
+            <input type="text" placeholder="Subject" class="contact-subject"><br>
+            <textarea placeholder="Write your message here..." class="contact-text"></textarea>
             <div class="btn-container">
               <button>send</button>
             </div>
@@ -114,6 +114,7 @@
         <div class="form-dis">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga distinctio incidunt eum cumque ipsam natus enim
             dolorem quis facere praesentium a temporibus optio possimus aliquam tempora, itaque doloremque voluptate, exercitationem.</p>
+            <p><span>🖈</span>Neverland<br/><span>✉</span>support@nowhere.com<br/><span>🕿</span>+1 111 111112</p>
         </div>
       </div>
     </div>
@@ -123,6 +124,8 @@
   <script src="js/utils.js"></script>
   <script src="js/scroll.js"></script>
   <script src="js/image-picker/image-picker.js"></script>
+  <script src="js/image-picker/imgs-display.js"></script>
+  <script src="js/image-picker/imgs-pagination.js"></script>
   <script src="js/image-picker/search.js"></script>
   <script src="js/cards.js"></script>
   <script src="js/main.js"></script>

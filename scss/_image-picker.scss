@@ -1,21 +1,27 @@
-.image-picker{
+.image-picker-container{
     .img-keywords-container{
         display: flex;
         flex-wrap: wrap;
+        background-color: yellow;
+        height: 100px;
+        overflow: scroll;
         span{
-            display: block;
+            // display: block;
             margin: 5px;
             &:hover{
                 cursor: pointer;
             }
         }
     }
+    .img-page-container{
+        .curr-page{
+            background-color: red;
+        }
+    }
     .image-container{
-        margin-left: auto;
-        margin-right: auto;
-        margin-top:50px;
-        height: 100%;
-        width: 100%;
+        position: relative;
+        top: 30px;
+        // width: 100%;
         table{
             img{
                 margin-top: 0;

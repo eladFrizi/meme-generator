@@ -7,24 +7,23 @@
   display: block;
   width: 100%; }
 
-/*----------  Playfair Font  ----------*/
+/*----------  Maven Pro Font  ----------*/
 @font-face {
-  font-family: 'Playfair';
-  src: url("../assets/fonts/playfair/PlayfairDisplay-Regular.ttf"); }
+  font-family: 'Maven Pro';
+  src: url("../assets/fonts/maven-pro-regular.ttf"); }
 
-/*----------  Ubunto Font  ----------*/
+/*----------  Lato Font  ----------*/
 @font-face {
-  font-family: 'Ubunto';
-  src: url("../assets/fonts/ubunto/Ubuntu-Light.ttf");
-  font-weight: 400; }
+  font-family: 'Lato';
+  src: url("../assets/fonts/lato-regular.ttf"); }
 
 :root {
   /* Layout */
   --container-width: 1063px;
   --inner-container-width: 900px;
   /* Fonts */
-  --primary-font: Playfair;
-  --secondary-font: Ubuntu;
+  --primary-font: 'Maven Pro';
+  --secondary-font: 'Lato';
   /* Colors */
   --main-color: #626262;
   --sections-bg: #f0f0f0; }
@@ -86,7 +85,7 @@ html {
     bottom: -5px;
     left: 0%; }
   .main-container .troll-face {
-    right: 2%;
+    right: 7%;
     top: 7%;
     height: 15vw;
     transform: rotate(45deg); }
@@ -165,6 +164,7 @@ fieldset {
   position: absolute;
   top: 100vh;
   background: #2eb398;
+  padding-top: 15px;
   width: 100%;
   display: flex;
   flex-flow: column;
@@ -193,13 +193,15 @@ fieldset {
       margin-left: 10%;
       height: 50%; }
       .about figure figcaption h2 {
-        color: #d7fcf5;
+        color: #d8fcf6;
         text-align: center;
         margin-left: -2em; }
       .about figure figcaption h4 {
         color: #20816d; }
       .about figure figcaption p {
-        padding-right: 10%; }
+        padding-right: 10%;
+        color: #d8fcf6;
+        line-height: 22px; }
 
 .home {
   width: 90%;
@@ -219,42 +221,44 @@ fieldset {
   .home-container img {
     width: 80%; }
 
-.image-picker .img-keywords-container {
+.image-picker-container .img-keywords-container {
   display: flex;
-  flex-wrap: wrap; }
-  .image-picker .img-keywords-container span {
-    display: block;
+  flex-wrap: wrap;
+  background-color: yellow;
+  height: 100px;
+  overflow: scroll; }
+  .image-picker-container .img-keywords-container span {
     margin: 5px; }
-    .image-picker .img-keywords-container span:hover {
+    .image-picker-container .img-keywords-container span:hover {
       cursor: pointer; }
 
-.image-picker .image-container {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-  height: 100%;
-  width: 100%; }
-  .image-picker .image-container table img {
+.image-picker-container .img-page-container .curr-page {
+  background-color: red; }
+
+.image-picker-container .image-container {
+  position: relative;
+  top: 30px; }
+  .image-picker-container .image-container table img {
     margin-top: 0; }
-  .image-picker .image-container div {
+  .image-picker-container .image-container div {
     display: inline-block;
     width: 50px;
     height: 100px; }
-  .image-picker .image-container img {
+  .image-picker-container .image-container img {
     margin-top: -20px;
     margin-left: 10px;
     height: 100px;
     width: 100px;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }
-    .image-picker .image-container img:hover {
+    .image-picker-container .image-container img:hover {
       cursor: pointer; }
 
 .contact {
+  color: #bebebe;
   width: 100%;
   position: relative;
   bottom: 0;
   background: #323232;
-  color: white;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -265,18 +269,28 @@ fieldset {
     min-width: 50%; }
     .contact .form-wrap .form-head {
       margin: 10px 0; }
+    .contact .form-wrap ::placeholder {
+      color: #bebebe; }
     .contact .form-wrap input {
+      font-family: --secondary-font;
       width: 100%;
       margin: 10px 0;
       background: #454545;
-      border: none; }
+      border: none;
+      padding: 10px; }
     .contact .form-wrap textarea {
-      height: 5em;
+      height: 10em;
       width: 100%;
       margin: 10px 0;
       background: #454545;
-      border: none; }
+      border: none;
+      resize: none;
+      border-radius: 5px;
+      padding: 10px; }
+    .contact .form-wrap h5 {
+      color: #727272; }
   .contact .form-dis {
+    font-family: --secondary-font;
     align-self: center;
     width: 30%;
     padding-left: 10px;
@@ -284,6 +298,9 @@ fieldset {
     @media screen and (min-width: 700px) {
       .contact .form-dis {
         display: initial; } }
+    .contact .form-dis span {
+      color: #2ab499;
+      font-size: 20px; }
   .contact .btn-container {
     display: flex;
     justify-content: flex-end; }
