@@ -23,10 +23,10 @@
     </div>
   </div>
   <div class="main-container">
-    <img class="jackie-chan" src="assets/home/jackie-chan.jpg" />
+    <!--<img class="jackie-chan" src="assets/home/jackie-chan.jpg" />
     <img class="hitting-keyboard" src="assets/home/hitting-keyboard.jpg" />
     <img class="winter-is-coming" src="assets/home/winter-is-coming.jpg" />
-    <img class="troll-face" src="assets/home/troll-face.jpg" />
+    <img class="troll-face" src="assets/home/troll-face.jpg" />-->
     <div class="card home">
       <div class="home-container">
         <h1>Meme Generator</h1>
@@ -92,14 +92,12 @@
             <h2>Get In Touch</h2>
             <h5>In order to get in touch use the contact form below</h5>
           </div>
-          <form action="">
-            <input type="text" placeholder="Name (Required)" class="contact-name"><br/>
-            <input type="email" placeholder="Email (Required)" class="contact-email"> <br>
-            <input type="text" placeholder="Subject" class="contact-subject"><br>
+          <form action="" onsubmit="return false;">
+            <input type="text" placeholder="Name (Required)" class="contact-name" required /><br/>
+            <input type="email" placeholder="Email (Required)" class="contact-email" required /> <br>
+            <input type="text" placeholder="Subject" class="contact-subject" /><br>
             <textarea placeholder="Write your message here..." class="contact-text"></textarea>
-            <div class="btn-container">
-              <button>send</button>
-            </div>
+              <input type="submit" onclick="saveMsgToLocalStorage(this);" />
           </form>
         </div>
         <div class="form-dis">
@@ -121,6 +119,7 @@
   <script src="js/cards.js"></script>
   <script src="js/main.js"></script>
   <script src="js/meme-gen.js"></script>
+  <script src="js/contact.js"></script>
 </body>
 
 </html>

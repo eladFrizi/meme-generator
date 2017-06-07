@@ -12,7 +12,7 @@ var gImgs = [{ id: 1, url: "assets/meme/batman.png" ,keywords:['batman','robin',
 { id: 10, url: "assets/meme/morpheus.jpg",keywords:['morpheus','thematrix','sunglasses','swag'] },
 { id: 11, url: "assets/meme/picard-wtf.jpg",keywords:['startrek','picard','whatthefuckareyoudoing'] },
 { id: 12, url: "assets/meme/finding-neverland.jpg",keywords:['johnnydepp','kid','sad','hug'] },
-{ id: 13, url: "assets/meme/kid-winning.jpg",keywords:['kid','winning','toddler','victory'] },
+{ id: 13, url: "assets/meme/kid-winning.jpg",keywords:['kid','baby','winning','toddler','victory'] },
 { id: 14, url: "assets/meme/shut-up-and-take-my-money.png",keywords:['money','futurama','shutup'] },
 { id: 15, url: "assets/meme/most-interesting-man-in-the-world.jpg",keywords:['interesting','man','mostinterestingman'] },
 { id: 16, url: "assets/meme/frog-crying.jpg",keywords:['frog','crying','tears','bigeyes'] },
@@ -38,4 +38,5 @@ var gSearch = {isHexDisplay:true,pageNum:1,searchImgs:null};
 //onload function
 function initApp() {
     imgsInitDisplay();
+    checkContactMsg();
 }
