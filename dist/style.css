@@ -7,24 +7,23 @@
   display: block;
   width: 100%; }
 
-/*----------  Playfair Font  ----------*/
+/*----------  Maven Pro Font  ----------*/
 @font-face {
-  font-family: 'Playfair';
-  src: url("../assets/fonts/playfair/PlayfairDisplay-Regular.ttf"); }
+  font-family: 'Maven Pro';
+  src: url("../assets/fonts/maven-pro-regular.ttf"); }
 
-/*----------  Ubunto Font  ----------*/
+/*----------  Lato Font  ----------*/
 @font-face {
-  font-family: 'Ubunto';
-  src: url("../assets/fonts/ubunto/Ubuntu-Light.ttf");
-  font-weight: 400; }
+  font-family: 'Lato';
+  src: url("../assets/fonts/lato-regular.ttf"); }
 
 :root {
   /* Layout */
   --container-width: 1063px;
   --inner-container-width: 900px;
   /* Fonts */
-  --primary-font: Playfair;
-  --secondary-font: Ubuntu;
+  --primary-font: 'Maven Pro';
+  --secondary-font: 'Lato';
   /* Colors */
   --main-color: #626262;
   --sections-bg: #f0f0f0; }
@@ -250,11 +249,11 @@ fieldset {
       cursor: pointer; }
 
 .contact {
+  color: #bebebe;
   width: 100%;
   position: relative;
   bottom: 0;
   background: #323232;
-  color: white;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -265,18 +264,26 @@ fieldset {
     min-width: 50%; }
     .contact .form-wrap .form-head {
       margin: 10px 0; }
+    .contact .form-wrap ::placeholder {
+      color: #bebebe; }
     .contact .form-wrap input {
+      font-family: --secondary-font;
       width: 100%;
       margin: 10px 0;
       background: #454545;
-      border: none; }
+      border: none;
+      padding: 10px; }
     .contact .form-wrap textarea {
-      height: 5em;
+      height: 10em;
       width: 100%;
       margin: 10px 0;
       background: #454545;
-      border: none; }
+      border: none;
+      resize: none;
+      border-radius: 5px;
+      padding: 10px; }
   .contact .form-dis {
+    font-family: --secondary-font;
     align-self: center;
     width: 30%;
     padding-left: 10px;
@@ -284,6 +291,9 @@ fieldset {
     @media screen and (min-width: 700px) {
       .contact .form-dis {
         display: initial; } }
+    .contact .form-dis span {
+      color: #2ab499;
+      font-size: 20px; }
   .contact .btn-container {
     display: flex;
     justify-content: flex-end; }

@@ -1,9 +1,9 @@
 .contact{
-        width: 100%;
+    color:#bebebe;
+    width: 100%;
     position: relative;
     bottom: 0;
     background: #323232;
-    color: white;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -15,21 +15,30 @@
         padding-left: 10%;
         width: 70%;
         min-width: 50%;
+        ::placeholder{
+            color:#bebebe;
+        }
         input{
+            font-family:--secondary-font;
             width: 100%;
             margin: 10px 0;
             background: #454545;
             border: none;
+            padding:10px;
         }
         textarea{
-            height: 5em;
+            height: 10em;
             width: 100%;
             margin: 10px 0;
             background: #454545;
             border: none;
+            resize: none;
+            border-radius: 5px;
+            padding:10px;
         }
     }
     .form-dis{
+        font-family:--secondary-font;
         align-self: center;
         width: 30%;
         padding-left: 10px;
@@ -37,6 +46,10 @@
         @media screen and (min-width: 700px) {
         display: initial;
             }
+        span{
+            color:#2ab499;
+            font-size: 20px;
+        }
     }
 
     .btn-container{
