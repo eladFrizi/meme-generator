@@ -49,15 +49,16 @@
         </div>
       </div>
     </div>
-    <div class="card meme-generator hidden">
-      <div class="meme-generator-container">
-        <div class="canvas-container" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="editor-contianer">
-          <div class="edit-unit">
-            <h2> Text - Top Editor </h2>
-            <input type="text" placeholder="edit me text-1" onchange="editText(1, this)"> <br /> size <input type="range"
-              min="10" max="100" onchange="editTextSize(1, this)">
-            </div>
+    <div class="card meme-generator hidden"> 
+          <div class="meme-generator-container">
+          <div class="canvas-container" ondrop="drop(event, this)" ondragover="allowDrop(event)" ></div>
+          <div class="editor-contianer">
+            <div class="edit-unit">
+                  <h2> Text - Top Editor </h2>
+                  <input type="text" placeholder="edit me text-1" onchange="editText(1, this)" > <br>
+                  size <input type="range" min="10" max="100" onchange="editTextSize(1, this)">
+            <div>
+          </div>
           </div>
         </div>
       </div>
