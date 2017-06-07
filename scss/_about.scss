@@ -2,6 +2,7 @@
     position: absolute;
     top: 100vh;
     background: #2eb398;
+    padding-top:15px;
     width: 100%;
     display: flex;
     flex-flow: column;
@@ -35,7 +36,7 @@
             margin-left: 10%;
             height: 50%;
             h2{
-                color: #d7fcf5;
+                color: #d8fcf6;
                 text-align: center;
                 margin-left: -2em;
             }
@@ -44,6 +45,8 @@
             }
             p{
             padding-right: 10%;
+            color:#d8fcf6;
+            line-height: 22px;
             }
         }
     }

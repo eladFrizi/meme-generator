@@ -1,9 +1,10 @@
 'use strict';
 
-function searchIfEnter(event, searchInput) {
+function searchIfClickedEnter(event, searchInput) {
     if (event.keyCode === 13) searchInput.parentNode.querySelector('.search-btn').click();
 }
 
+// ------------------------------------ REFACTOR ------------------------------
 function searchImgs() {
     var searchResults = [];
     var elInput = document.querySelector('.search-imgs-input');
@@ -12,9 +13,9 @@ function searchImgs() {
 
     for (var i = 0; i < gImgs.length; i++) { // iterating imgs
         var img = gImgs[i];
-        for (var j = 0; j < searchTxtArr.length; j++) { // iterating all txt keywords for every img
+        for (var j = 0; j < searchTxtArr.length; j++) { // iterating all txt keywords(for every img)
             var currKeyword = searchTxtArr[j];
-            for (var k = 0; k < img.keywords.length; k++) { // iterating all img keywords for every txt keyword 
+            for (var k = 0; k < img.keywords.length; k++) { // iterating all img keywords(for every txt keyword) 
                 var imgKeyword = img.keywords[k];
                 if (currKeyword === imgKeyword) {
                     searchResults = updateSearchResults(searchResults, i, searchTxtArr.length - j);
@@ -25,7 +26,8 @@ function searchImgs() {
     searchResults = searchResults.sort(function (a, b) {
         return b.matchScore - a.matchScore;
     });
-    displayImgsByHex(searchResults, 110);
+    gSearch.searchImgs = searchResults;
+    displayImgs();
 }
 
 function updateSearchResults(searchResults, imgIdx, score) {
@@ -36,15 +38,20 @@ function updateSearchResults(searchResults, imgIdx, score) {
         }
     }
     if (k === searchResults.length) { // if img is not found in matching imgs
-        var newImg = Object.assign({}, gImgs[imgIdx])
-        searchResults.push(newImg); // slicing img into search results
+        var newImg = Object.assign({}, gImgs[imgIdx]);
+        searchResults.push(newImg); // copying as new img onto search results
         searchResults[searchResults.length - 1].matchScore = score;
     }
     return searchResults;
 }
 
 function createKeywords(gImgs) {
+    const BASE_FONTSIZE = 15;
+    const BASE_FONTWEIGHT = 400;
+    const ADD_FONTSIZE = 5;
+    const ADD_FONTWEIGHT = 100;
     var allKeywords = [];
+
     for (var i = 0; i < gImgs.length; i++) { // iterating imgs
         var img = gImgs[i];
 
@@ -52,10 +59,14 @@ function createKeywords(gImgs) {
             var idx = allKeywords.findIndex(function (keyword) {
                 return img.keywords[j] === keyword.txt;
             });
-            if (idx !== -1) allKeywords[idx].fontSize += 5;
-            else {
+
+            if (idx !== -1) { // if found, update keyword
+                allKeywords[idx].fontSize += ADD_FONTSIZE;
+                allKeywords[idx].fontWeight += ADD_FONTWEIGHT;
+            } else { // else,create new keyword in arr
                 allKeywords.push({ txt: img.keywords[j] });
-                allKeywords[allKeywords.length - 1].fontSize = 20;
+                allKeywords[allKeywords.length - 1].fontSize = BASE_FONTSIZE;
+                allKeywords[allKeywords.length - 1].fontWeight = BASE_FONTWEIGHT;
             }
 
         }
@@ -70,6 +81,7 @@ function displayKeywords(keywords) {
         elKeyword.setAttribute('onclick', 'searchByKeyword(this.innerText)');
         elKeyword.innerText = keywords[i].txt;
         elKeyword.style.fontSize = keywords[i].fontSize + 'px';
+        elKeyword.style.fontWeight = keywords[i].fontWeight;
         elImgKeywordContainer.appendChild(elKeyword);
     }
 }
@@ -80,6 +92,6 @@ function searchByKeyword(keyword) {
     for (var i = 0; i < gImgs.length; i++) {
         if (gImgs[i].keywords.includes(keyword)) searchResults.push(gImgs[i]);
     }
-
-    displayImgsByHex(searchResults);
+    gSearch.searchImgs = searchResults;
+    displayImgs();
 }
