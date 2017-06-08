@@ -42,14 +42,3 @@ function initApp() {
     checkContactMsg();
     animateHome();
 }
-
-function animateHome() {
-    var elHome = document.querySelector('.home-container');
-    elHome.classList.add('animated', 'zoomInDown');
-    elHome.classList.remove('hidden');
-    elHome.classList.remove('animated', 'zoomInDown');
-    var audio = new Audio('../assets/home/animateHome-bringiton.mp3');
-    setTimeout(function () {
-        audio.play();
-    }, 1000);
-}
