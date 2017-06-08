@@ -25,55 +25,16 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function CreatePopup(HTMLContent, parent) {
-
-    // creating the popup element
-    var elPopup = document.createElement('div');
-    elPopup.classList.add('popup');
-    elPopup.style.position = 'absolute';
-
-    // if no parent was assigned,put it mid-screen
-    if (!parent) {
-        parent = document.body;
-        elPopup.classList.add('mid-screen-popup');
+function getRandomAnimationClass() {
+    var rnd = Math.floor(Math.random() * 4);
+    switch (rnd) {
+        case 3:
+            return 'bounceInDown';
+        case 2:
+            return 'bounceInLeft';
+        case 1:
+            return 'bounceInRight';
+        case 0:
+            return 'bounceInUp';
     }
-    parent.appendChild(elPopup);
-
-    // inserting content
-    elPopup.innerHTML = HTMLContent; // VULNERABLE!
-
-    // sets the onblur to close the popup
-    elPopup.setAttribute('tabindex', '1');
-    elPopup.setAttribute('onblur', 'this.parentNode.removeChild(this);');
-    elPopup.focus();
-    elPopup.style.outline = '0px'; // prevents default outline action of focus
-}
-
-function editEl(oldElement,modelVar,elType) {
-    if(!elType) elType = 'span';
-    // creating the input element
-    var elInput = document.createElement('input');
-    elInput.setAttribute('type', 'text');
-    elInput.setAttribute('onblur', 'applyEditEl(this,' + modelVar + ','+elType+')');
-    elInput.setAttribute('value', oldElement.innerText);
-    oldElement.parentNode.appendChild(elInput);
-
-    // removing the old text element
-    oldElement.parentNode.removeChild(oldElement);
-    elInput.focus();
-}
-
-function applyEditEl(elInput,modelVar,elType) {
-    if(!elType) elType = 'span';
-    // creating the new span element
-    var elSpan = document.createElement('span');
-    elSpan.setAttribute('onclick', 'editEl(this,' + modelVar + ','+elType+')');
-
-    // updating model(if needed) and DOM
-    if(modelVar) modelVar = elInput.value;
-    elSpan.innerText = elInput.value;
-
-    // appending new text child, removing old input child
-    elInput.parentNode.appendChild(elSpan);
-    elInput.parentNode.removeChild(elInput)
 }

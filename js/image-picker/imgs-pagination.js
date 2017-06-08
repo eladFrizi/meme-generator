@@ -24,9 +24,9 @@ function changePage(elBtn) {
 function updatePageBtn(elBtn) {
     var elImgPageContainerChilds = document.querySelector('.img-page-container').childNodes;
 
-    for (var i = 0; i < elImgPageContainerChilds.length; i++) { // resetting currPage
-        elImgPageContainerChilds[i].classList.remove('curr-page');
+    for (var i = 0; i < elImgPageContainerChilds.length; i++) { // resetting disabled button
+        elImgPageContainerChilds[i].removeAttribute('disabled');
     }
 
-    elBtn.classList.add('curr-page');
+    elBtn.setAttribute('disabled','');
 }

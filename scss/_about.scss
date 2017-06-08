@@ -1,14 +1,10 @@
 .about{
-    position: absolute;
-    top: 100vh;
     background: #2eb398;
     padding-top:15px;
-    width: 100%;
     display: flex;
     flex-flow: column;
     align-content: space-between;
     @media screen and (min-width: 700px) {
-        // padding: 5%;
         flex-flow: row wrap;
         }
 

@@ -1,12 +1,6 @@
 .card{
-    position: absolute;
-    width: 90%;
-    height: 90%;
-    left:50%;
-    top:50%;
-    transform: translate(-50%,-50%);
-    // background-color: red;
+    margin-top: 4%;
 }
-.hidden{
-    display: none;
+.card.hidden{
+    display: none !important;
 }

@@ -1,12 +1,24 @@
-.image-picker-container{
+.image-picker{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    .search-container{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .view-container{
+        display: flex;
+        flex-wrap: nowrap;
+    }
     .img-keywords-container{
         display: flex;
         flex-wrap: wrap;
-        // background-color: yellow;
         height: 100px;
         overflow: scroll;
         span{
-            // display: block;
             margin: 5px;
             &:hover{
                 cursor: pointer;
@@ -14,22 +26,18 @@
         }
     }
     .img-page-container{
-        .curr-page{
-            background-color: red;
+            button:disabled{
+                background-color:gray;
         }
     }
     .image-container{
-        position: relative;
-        top: 30px;
-        table{
-            img{
-                margin-top: 0;
-            }
-        }
+        margin-top: 45px;
+        margin-bottom: 15px;
         div{
-            display: inline-block;
-            width: 50px;
-            height: 100px;
+            text-align: center;
+            h1{
+                text-align: center;
+            }
         }
         img{
             &:hover{
