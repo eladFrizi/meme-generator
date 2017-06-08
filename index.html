@@ -7,22 +7,31 @@
   <link rel="stylesheet" href="dist/style.css">
   <link rel="stylesheet" href="/node_modules/animate.css/animate.min.css">
   <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
-
 </head>
 
 <body onload="initApp()">
+
   <div class="navbar">
     <div class="nav-wrap">
       <ul>
-        <li onclick="handleClick('.about')" class="btn">about</li>
-        <li></li>
-        <li onclick="handleClick('.contact')">contact</li>
+        <li>
+          <span onclick="goCardBack()">⇐ <span class="navtxt">Back</span></span>
+          <span onclick="translatePage()">漢 <span class="navtxt">Language</span></span>
+          <span class="donate"><a href="https://www.paypal.com/">&#127866; <span class="navtxt">Donate</span></a>
+          </span>
+        </li>
+        <li>
+          <span onclick="handleClick('.main-container')">🏠 <span class="navtxt">Main</span></span>
+          <span onclick="handleClick('.about')">🖺 <span class="navtxt">About</span></span>
+          <span onclick="handleClick('.contact')">✆ <span class="navtxt">Contact</span></span>
+        </li>
       </ul>
     </div>
     <div class="show-arrow">
       <img src="assets/logo.png">
     </div>
   </div>
+
   <div class="main-container">
     <div class="card home">
       <div class="home-container hidden">
@@ -55,15 +64,22 @@
         <div class="canvas-container" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
         <!--<div class="editor-contianer">-->
         <div class="edit-unit">
+<<<<<<< HEAD
           <div class="editor-tools">
           <h2> Text - Editor </h2>
           <button onclick="addNewText()">add new text</button>
           <div class="meme-text-picker-container">
             <p>Select text to edit on pic</p>
+=======
+          <h2> Text - Editor </h2>
+          <button onclick="addNewText()">add new text</button>
+          <p>Select text to edit on pic
+>>>>>>> 6d0221d4bf349016582b8c53b59e4724261ef173
             <select onchange="adjustEditor(this)" class="meme-text-picker">
                           <option value="text1">Top - text</option>
                           <option value="text2">Bottom - text</option>
               </select>
+<<<<<<< HEAD
           </div>
           <div>
               <p> change content</p>
@@ -90,6 +106,12 @@
             <br/><span> size </span><br/>
             <input type="range" min="10" max="100" onchange="edit(this,'size')" class="size-picker">
             <p>color </p>
+=======
+          </p>
+          <div class="editor-tools">
+            <input type="text" placeholder="edit me text-1" onchange="edit(this,'text')" class="change-text"> <br> size
+            <input type="range" min="10" max="100" onchange="edit(this,'size')" class="size-picker"> <br> color
+>>>>>>> 6d0221d4bf349016582b8c53b59e4724261ef173
             <input type="color" onchange="edit(this, 'fillStyle')" class="color-picker"> <br>
             <i class="fa fa-arrows-alt"></i> font <select type="font" onchange="edit(this, 'fontFamily')" class="font-picker"> 
                             <option value="Georgia" class="georgia">Georgia </option>
@@ -97,6 +119,19 @@
                             <option value='""Courier New"' class="courier-new">Courier New </option> 
                             <option value="Fantasy" class="fantasy">Fantasy </option> 
                    </select>
+<<<<<<< HEAD
+=======
+            <br>
+            <div class="position-changers">
+              <p>move:</p>
+              <div class="top-arrows">
+                <span onclick="moveTextByArrows('up')">&uarr;</span><span onclick="moveTextByArrows('down')">&darr;	</span>
+              </div>
+              <div class="left-arrows">
+                <span onclick="moveTextByArrows('left')">&larr;</span ><span onclick="moveTextByArrows('right')">&rarr;</span>
+              </div>
+            </div>
+>>>>>>> 6d0221d4bf349016582b8c53b59e4724261ef173
 
           </div>
           <div>
@@ -112,9 +147,10 @@
       </div>
     </div>
   </div>
+
   <div class="about">
     <figure>
-      <img src="assets/about/face.png">
+      <img src="assets/about/snir.jpg">
       <figcaption>
         <h2>Snir Shechter</h2>
         <h4>Frontend Programmer</h4>
@@ -123,6 +159,12 @@
           start B.sc studies in computer-science, preferably in Technion university in Haifa,Israel.
         </p>
       </figcaption>
+      <div class="socialbtns">
+        <a href="https://www.facebook.com/MarBahur"><img src="assets/contact/facebook.png"/></a>
+        <a href="https://twitter.com/"><img src="assets/contact/twitter.png"/></a>
+        <a href="https://www.linkedin.com/uas/login"><img src="assets/contact/linkedin.png"/></a>
+        <a href="https://plus.google.com/105471152039995524403"><img src="assets/contact/gplus.png"/></a>
+      </div>
     </figure>
     <figure>
       <img src="assets/about/elad.jpg">
@@ -134,6 +176,12 @@
           Beside that i am a  cool and nice guy who want to find himself in a cool and nice place. 
         </p>
       </figcaption>
+      <div class="socialbtns">
+        <a href="https://www.facebook.com/MarBahur"><img src="assets/contact/facebook.png"/></a>
+        <a href="https://twitter.com/"><img src="assets/contact/twitter.png"/></a>
+        <a href="https://www.linkedin.com/uas/login"><img src="assets/contact/linkedin.png"/></a>
+        <a href="https://plus.google.com/105471152039995524403"><img src="assets/contact/gplus.png"/></a>
+      </div>
     </figure>
     <div class="contact">
       <div class="form-wrap">
@@ -141,25 +189,24 @@
           <h2>Get In Touch</h2>
           <h5>In order to get in touch use the contact form below</h5>
         </div>
-        <form action="" onsubmit="return false;">
+        <form onsubmit="return false;">
           <input type="text" placeholder="Name (Required)" class="contact-name" required /><br/>
           <input type="email" placeholder="Email (Required)" class="contact-email" required /> <br>
           <input type="text" placeholder="Subject" class="contact-subject" /><br>
           <textarea placeholder="Write your message here..." class="contact-text"></textarea>
-          <input type="submit" onclick="saveMsgToLocalStorage(this);" />
+          <input type="submit" value="Submit" onclick="saveMsgToLocalStorage(this);" />
         </form>
       </div>
       <div class="form-dis">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga distinctio incidunt eum cumque ipsam natus enim dolorem
-          quis facere praesentium a temporibus optio possimus aliquam tempora, itaque doloremque voluptate, exercitationem.</p>
+        <p>You can find us on Neverland. transportation available via fairies, little kids who can fly and one-eyed pirates.</p>
         <p><span>🖈</span>Neverland<br/><span>✉</span>support@nowhere.com<br/><span>🕿</span>+1 111 111112</p>
       </div>
     </div>
   </div>
+
   <script src="node_modules/smoothscroll/smoothscroll.js"></script>
-  <script src="js/interact.js"></script>
   <script src="js/utils.js"></script>
-  <script src="js/scroll.js"></script>
+  <script src="js/navbar.js"></script>
   <script src="js/image-picker/image-picker.js"></script>
   <script src="js/image-picker/imgs-display.js"></script>
   <script src="js/image-picker/imgs-pagination.js"></script>
