@@ -7,22 +7,28 @@
   <link rel="stylesheet" href="dist/style.css">
   <link rel="stylesheet" href="/node_modules/animate.css/animate.min.css">
   <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
-
 </head>
 
 <body onload="initApp()">
+
   <div class="navbar">
     <div class="nav-wrap">
       <ul>
-        <li onclick="handleClick('.about')" class="btn">about</li>
-        <li></li>
-        <li onclick="handleClick('.contact')">contact</li>
+        <li>
+          <span onclick="goCardBack()">⇐ <span class="navtxt">Back</span></span>
+          <span onclick="translatePage()">漢 <span class="navtxt">Language</span></span>
+        </li>
+        <li>
+          <span onclick="handleClick('.about')" class="btn">🖺 <span class="navtxt">about</span></span>
+          <span onclick="handleClick('.contact')">✆ <span class="navtxt">contact</span></span>
+        </li>
       </ul>
     </div>
     <div class="show-arrow">
       <img src="assets/logo.png">
     </div>
   </div>
+
   <div class="main-container">
     <div class="card home">
       <div class="home-container hidden">
@@ -52,45 +58,45 @@
       <div class="meme-generator-container">
         <div class="canvas-container" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
         <!--<div class="editor-contianer">-->
-          <div class="edit-unit">
-            <h2> Text - Editor </h2>
-            <button onclick="addNewText()">add new text</button>
-            <p>Select text to edit on pic
-              <select onchange="adjustEditor(this)" class="meme-text-picker">
+        <div class="edit-unit">
+          <h2> Text - Editor </h2>
+          <button onclick="addNewText()">add new text</button>
+          <p>Select text to edit on pic
+            <select onchange="adjustEditor(this)" class="meme-text-picker">
                           <option value="text1">Top - text</option>
                           <option value="text2">Bottom - text</option>
               </select>
-            </p>
-            <div class="editor-tools">
-              <input type="text" placeholder="edit me text-1" onchange="edit(this,'text')" class="change-text"> <br> size
-              <input type="range" min="10" max="100" onchange="edit(this,'size')" class="size-picker"> <br> color
-              <input
-                type="color" onchange="edit(this, 'fillStyle')" class="color-picker"> <br>
-                <i class="fa fa-arrows-alt"></i> font <select type="font" onchange="edit(this, 'fontFamily')" class="font-picker"> 
+          </p>
+          <div class="editor-tools">
+            <input type="text" placeholder="edit me text-1" onchange="edit(this,'text')" class="change-text"> <br> size
+            <input type="range" min="10" max="100" onchange="edit(this,'size')" class="size-picker"> <br> color
+            <input type="color" onchange="edit(this, 'fillStyle')" class="color-picker"> <br>
+            <i class="fa fa-arrows-alt"></i> font <select type="font" onchange="edit(this, 'fontFamily')" class="font-picker"> 
                             <option value="Georgia" class="georgia">Georgia </option>
                             <option value="Verdana" class="verdana">Verdana </option>
                             <option value='""Courier New"' class="courier-new">Courier New </option> 
                             <option value="Fantasy" class="fantasy">Fantasy </option> 
                    </select>
-                <br>
-                <div class="position-changers">
-                  <p>move:</p>
-                  <div class="top-arrows">
-                    <span onclick="moveTextByArrows('up')">&uarr;</span><span onclick="moveTextByArrows('down')">&darr;	</span>
-                  </div>
-                  <div class="left-arrows">
-                    <span onclick="moveTextByArrows('left')">&larr;</span ><span onclick="moveTextByArrows('right')">&rarr;</span>
-                  </div>
-                </div>
+            <br>
+            <div class="position-changers">
+              <p>move:</p>
+              <div class="top-arrows">
+                <span onclick="moveTextByArrows('up')">&uarr;</span><span onclick="moveTextByArrows('down')">&darr;	</span>
+              </div>
+              <div class="left-arrows">
+                <span onclick="moveTextByArrows('left')">&larr;</span ><span onclick="moveTextByArrows('right')">&rarr;</span>
+              </div>
+            </div>
 
-            </div>
-            <div>
-            </div>
+          </div>
+          <div>
+          </div>
           <!--</div>-->
         </div>
       </div>
     </div>
   </div>
+
   <div class="about">
     <figure>
       <img src="assets/about/face.png">
@@ -135,6 +141,7 @@
       </div>
     </div>
   </div>
+
   <script src="node_modules/smoothscroll/smoothscroll.js"></script>
   <script src="js/interact.js"></script>
   <script src="js/utils.js"></script>

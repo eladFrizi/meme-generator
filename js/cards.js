@@ -49,7 +49,7 @@ function animateImgPicker(elImgPicker) {
         element.classList.add('animated', animation);
         element.addEventListener('animationend', function () {
             element.classList.remove('animated', animation);
-        })
+        });
     });
     setTimeout(function () {
         displayImgs();
@@ -59,10 +59,10 @@ function animateImgPicker(elImgPicker) {
         displayImgs();
     });
 }
+
 function animateMemeGen(elMemeGen) {
     elMemeGen.classList.remove('hidden');
     elMemeGen.childNodes.forEach(function (element) {
-        console.log(element);
         if (element.nodeType === 3) return;
         var animation = getRandomAnimationClass();
         element.classList.add('animated', animation);
