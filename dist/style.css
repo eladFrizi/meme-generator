@@ -315,30 +315,75 @@ button:hover {
   .meme-generator-container .editor-contianer {
     position: fixed;
     right: 10px;
-    top: 10px;
+    bottom: 10px;
+    top: initial;
     background: red; }
     @media screen and (min-width: 650px) {
       .meme-generator-container .editor-contianer {
-        margin-top: 0; } }
+        top: 10px;
+        bottom: initial; } }
     .meme-generator-container .editor-contianer .edit-unit {
       border: 1px solid black;
       padding: 10px; }
   .meme-generator-container .canvas-container {
     position: relative;
     z-index: 10; }
+  .meme-generator-container canvas {
+    max-width: 90vw; }
+    @media screen and (min-width: 650px) {
+      .meme-generator-container canvas {
+        width: auto;
+        height: auto; } }
 
 .drag-el {
   margin: 0;
   padding: 0px;
-  display: block;
   cursor: pointer;
   width: auto;
-  padding: 5px; }
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
   .drag-el p {
     margin: 0;
     padding: 0;
     cursor: text;
     width: fit-content; }
+
+.modal-img {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background: rgba(64, 54, 54, 0.81); }
+  .modal-img img {
+    display: block;
+    margin: auto auto; }
+
+.font-picker .georgia {
+  font-family: Georgia; }
+
+.font-picker .verdana {
+  font-family: Verdana; }
+
+.font-picker .courier-new {
+  font-family: "Courier New"; }
+
+.font-picker .fantasy {
+  font-family: Fantasy; }
+
+.position-changers {
+  display: flex;
+  flex-flow: column;
+  bottom: 1px solid black; }
+  .position-changers div {
+    display: flex;
+    justify-content: space-between;
+    width: 15%; }
+
+.movement-btn {
+  height: 10px;
+  width: 10px; }
 
 .home-container {
   animation-name: zoomInDown;

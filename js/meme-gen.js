@@ -1,4 +1,7 @@
 
+var diffrenceBetweenTextAndCanvas = 50;
+
+
 var gCanvasState = {
 }
 
@@ -10,6 +13,7 @@ function imgClicked(id, event) {
     createCanvasWithImage(gCanvasState)
     renderTxts(gCanvasState)
     showCard('meme-generator');
+    adjustEditor(document.querySelector('.meme-text-picker'))
 }
 
 function findImageObJ(id) {
@@ -25,26 +29,33 @@ function getCanvasState(imgObj) {
     gCanvasState.img = imgObj;
     gCanvasState.text1 = {
         text: 'edit me text1',
-        fillStyle: 'red',
+        fillStyle: '#c11f1f',
         textAlign: 'center',
-        left: 0,
-        top: 0,
+        left: 100,
+        top: 100,
         size: 30,
         fontFamily: 'Fantasy'
     }
     gCanvasState.text2 = {
         text: 'edit me text2',
-        fillStyle: 'red',
+        fillStyle: '#eb42f4',
         textAlign: 'left',
-        left: 0,
+        left: 100,
         top: 10,
         size: 30,
-        fontFamily: 'Ariel'
+        fontFamily: 'Verdana'
     }
 }
 
-function adjustEditor(select){
-        gCanvasState.openInEditor = select.value;
+function adjustEditor(select) {
+    gCanvasState.openInEditor = select.value;
+    var currentInfoToShow = gCanvasState[gCanvasState.openInEditor];
+    var editUnit = document.querySelector('.edit-unit');
+    console.log(currentInfoToShow)
+    editUnit.querySelector('.font-picker').value = currentInfoToShow.fontFamily;
+    editUnit.querySelector('.color-picker').value = currentInfoToShow.fillStyle;
+    editUnit.querySelector('.size-picker').value = currentInfoToShow.size;
+    editUnit.querySelector(".change-text").value = currentInfoToShow.text;
 }
 
 function createCanvasWithImage(canvasState) {
@@ -57,6 +68,7 @@ function createCanvasWithImage(canvasState) {
     ctx.drawImage(elImg, 0, 0);
 }
 
+
 function renderTxts(state) {
     createCanvasWithImage(state)
     for (prop in state) {
@@ -65,9 +77,9 @@ function renderTxts(state) {
             var canvasCover = document.querySelector(".canvas-container");
             var textKey = state[prop];
             var divOverCanvas = document.createElement('div');
-            divOverCanvas.className ='drag-el';
+            divOverCanvas.className = 'drag-el';
             divOverCanvas.id = prop
-            divOverCanvas.innerHTML = `<p>${textKey.text}</p>`;
+            divOverCanvas.innerHTML = `<p contenteditable="true">${textKey.text}</p>`;
             divOverCanvas.style.maxWidth = canvasCover.width;
             divOverCanvas.style.position = 'absolute';
             // divOverCanvas.style.width = '100%';
@@ -75,118 +87,159 @@ function renderTxts(state) {
             divOverCanvas.style.top = textKey.top + 'px';
             divOverCanvas.style.left = textKey.left + 'px';
             divOverCanvas.style.fontSize = textKey.size + 'px';
-            divOverCanvas.style.textAlign = textKey.textAlign;
+            // divOverCanvas.style.textAlign = textKey.textAlign;
             divOverCanvas.style.fontFamily = textKey.fontFamily;
             divOverCanvas.style.color = textKey.fillStyle;
             divOverCanvas.style.zIndex = 50;
-            divOverCanvas.setAttribute('ondragstart', "drag(event)")
-            divOverCanvas.setAttribute('draggable', "true")
-            divOverCanvas.setAttribute('contenteditable', 'true')
+            divOverCanvas.setAttribute('ondragstart', "drag(event)");
+            divOverCanvas.setAttribute('draggable', "true");
+            divOverCanvas.style.display = 'flex';
+            divOverCanvas.style.flexDirection = 'column';
+            divOverCanvas.style.alignItems = 'center';
             divOverCanvas.setAttribute('onblur', 'updateModelTxt(this)')
+            var movementBtn = `<img src="https://image.flaticon.com/icons/svg/181/181513.svg" class="movement-btn" height="10" width="10">`;
+            divOverCanvas.innerHTML += movementBtn;
             canvasCover.appendChild(divOverCanvas)
         }
     }
 }
 
-function editText(input) {
-    var textKey = gCanvasState.openInEditor
+function edit(input, property) {
+    var textKey = gCanvasState.openInEditor;
     var value = input.value;
-    gCanvasState[textKey].text = value;
+    gCanvasState[textKey][property] = value;
     renderTxts(gCanvasState)
 }
 
-function editTextSize(input) {
-    textKey = document.querySelector('.meme-text-picker').value
-    var value = input.value;
-    console.log(value);
-    gCanvasState[textKey].size = value;
-    renderTxts(gCanvasState)
-}
 
-function updateModelTxt(changedEl){
+function updateModelTxt(changedEl) {
     var textKey = changedEl.id;
-    gCanvasState[textKey].text = changedEl.innerText 
+    gCanvasState[textKey].text = changedEl.innerText;
 }
 
-
-function allowDrop(event) {
-    event.preventDefault();
-}
-
-
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-    ev.dataTransfer.setDragImage(ev.target,ev.target.offsetWidth/1.5,ev.target.offsetHigth/2);
-}
-
-function drop(ev, fatherEl) {
-    var data = ev.dataTransfer.getData("text");
-        var draggedElement = document.querySelector('#'+data);
-    var newTop = (ev.pageY - fatherEl.offsetTop - 50);
-    var newLeft = (ev.pageX - fatherEl.offsetLeft - draggedElement.offsetWidth);
-    if(newTop < -5 || newTop > fatherEl.clientHeight - draggedElement.clientHeight ) {
-        newTop = gCanvasState[data].top;
+function moveTextByArrows(direction) {
+    var textKey = gCanvasState.openInEditor;
+    var textToChange = gCanvasState[textKey]
+    var canvas = document.querySelector('canvas')
+    switch (direction) {
+        case 'up':
+            if (textToChange.top < 0) break;
+            textToChange.top -= 10;
+            break;
+        case 'down':
+            if (canvas.offsetHeight < textToChange.top + diffrenceBetweenTextAndCanvas) break;
+            textToChange.top += 10;
+            break;
+        case 'left':
+            if(textToChange.left < 0) break;
+            textToChange.left -= 10;
+            break;
+        case 'right':
+            if(canvas.offsetWidth < textToChange.left - 10) break;
+            textToChange.left += 10;
+            break;
     }
-    if(newLeft < 0) newLeft = 0;
-    draggedElement.style.top = newTop  + 'px';
-    draggedElement.style.left = newLeft  + 'px';
-    gCanvasState[data].top = newTop;
-    gCanvasState[data].left = newLeft;
-    // console.log(gCanvasState[data].top, newTop)
+
+    renderTxts(gCanvasState);
+}
+
+
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+
+
+    function drag(ev) {
+        if (ev.target.className === 'movement-btn') {
+            var toTransform = ev.target.parentElement.id;
+        } else {
+            var toTransform = ev.target.id
+        }
+        ev.dataTransfer.setData("text", toTransform);
+        ev.dataTransfer.setDragImage(ev.target, ev.target.offsetWidth / 1.5, ev.target.offsetHigth / 2);
+    }
+
+    function drop(ev, fatherEl) {
+        var data = ev.dataTransfer.getData("text");
+        var draggedElement = document.querySelector('#' + data);
+        var newTop = (ev.pageY - fatherEl.offsetTop - diffrenceBetweenTextAndCanvas - 5 );
+        var newLeft = (ev.pageX - fatherEl.offsetLeft - draggedElement.offsetWidth);
+        if (newTop < -5 || newTop > fatherEl.clientHeight - draggedElement.clientHeight) {
+            newTop = fatherEl.clientHeight - draggedElement.clientHeight;
+        }
+        if (newLeft < 0) newLeft = 0;
+        draggedElement.style.top = newTop + 'px';
+        draggedElement.style.left = newLeft + 'px';
+        gCanvasState[data].top = newTop;
+        gCanvasState[data].left = newLeft;
+        // console.log(gCanvasState[data].top, newTop)
         console.log(gCanvasState[data].left, newLeft)
 
-}
+    }
 
 
 
 
-function addNewText(){
-    var textsCounter = 0
-    for(prop in gCanvasState){
-        if (prop.substring(0,4) === 'text'){
-            textsCounter++;
+    function addNewText() {
+        var textsCounter = 0
+        for (prop in gCanvasState) {
+            if (prop.substring(0, 4) === 'text') {
+                textsCounter++;
+            }
         }
+        var textKey = 'text' + (textsCounter + 1);
+        var newText = {
+            text: 'NEW Text',
+            fillStyle: '#c11f1f',
+            textAlign: 'center',
+            left: 0,
+            top: 50,
+            size: 30,
+            fontFamily: 'Fantasy'
+        }
+        gCanvasState[textKey] = newText;
+        renderTxts(gCanvasState);
+        var newOpition = document.createElement("option");
+        newOpition.setAttribute('value', `${textKey}`);
+        newOpition.innerText = `New text -${textKey}`;
+        document.querySelector('.meme-text-picker').appendChild(newOpition);
     }
-    var textKey = 'text'+(textsCounter+1);
-    var newText = {
-        text: 'NEW Text',
-        fillStyle: 'green',
-        textAlign: 'center',
-        left: 0,
-        top: 50,
-        size: 30,
-        fontFamily: 'Fantasy'
-    }
-    gCanvasState[textKey] = newText;
-    renderTxts(gCanvasState);
-    var newOpition = document.createElement("option");
-    newOpition.setAttribute('value', `${textKey}`);
-    newOpition.innerText = `New text -${textKey}`;
-    document.querySelector('.meme-text-picker').appendChild(newOpition);
-}
 
-function printOnCanvas(){
-    // createCanvasWithImage(gCanvasState);
-    // var ghb = document.querySelector('.canvas-container').offsetTop -25;
-    var c = document.getElementById("myCanvas");
-    for (prop in gCanvasState){
-        if (prop.substring(0,4) === 'text'){
+    function printOnCanvas() {
+        // createCanvasWithImage(gCanvasState);
+        // var ghb = document.querySelector('.canvas-container').offsetTop -25;
+        var c = document.getElementById("myCanvas");
+        for (prop in gCanvasState) {
+            if (prop.substring(0, 4) === 'text') {
+
+                var left = (c.width / c.offsetWidth) * gCanvasState[prop].left;
+                var top = (c.height / c.offsetHeight) * gCanvasState[prop].top + (+gCanvasState[prop].size);
                 var ctx = c.getContext("2d");
-            ctx.font=`${+gCanvasState[prop].size}px ${gCanvasState[prop].fontFamily}`;
-            ctx.fillStyle = `${gCanvasState[prop].fillStyle}`;
-            ctx.fillText(`${gCanvasState[prop].text}`,`${gCanvasState[prop].left}`,`${gCanvasState[prop].top + (+gCanvasState[prop].size)}`);
+                ctx.font = `${+gCanvasState[prop].size}px ${gCanvasState[prop].fontFamily}`;
+                ctx.fillStyle = `${gCanvasState[prop].fillStyle}`;
+                ctx.fillText(`${gCanvasState[prop].text}`, `${left}`, `${top}`);
+            }
         }
+
     }
 
-}
+
+    function convertCanvasToImage() {
+        var image = new Image();
+        image.src = document.querySelector('canvas').toDataURL("image/png");
+        return image;
+    }
+
+    function openModalAndPrintPImage(elImage) {
+        var elModal = document.querySelector('.modal-img')
+        elModal.appendChild(elImage);
+        elModal.style.display = 'block'
+    }
+
+    function finishCLicked() {
+        printOnCanvas()
+        var elImage = convertCanvasToImage();
+        openModalAndPrintPImage(elImage)
+    }
 
 
-    // gCanvasState.text1 = {
-    //     text: 'edit me text1',
-    //     fillStyle: 'red',
-    //     textAlign: 'center',
-    //     left: 0,
-    //     top: 100,
-    //     size: 30,
-    //     fontFamily: 'fantasy'
-    // }

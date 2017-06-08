@@ -48,6 +48,7 @@
       <div class="image-container"></div>
     </div>
     <div class="card meme-generator hidden">
+      <div class="modal-img" hidden></div>
       <div class="meme-generator-container">
         <div class="canvas-container" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
         <div class="editor-contianer">
@@ -58,11 +59,30 @@
               <select onchange="adjustEditor(this)" class="meme-text-picker">
                           <option value="text1">Top - text</option>
                           <option value="text2">Bottom - text</option>
-                      </select>
+              </select>
             </p>
             <div class="editor-tools">
-              <input type="text" placeholder="edit me text-1" onchange="editText(this)"> <br> size <input type="range" min="10"
-                max="100" onchange="editTextSize(this)">
+              <input type="text" placeholder="edit me text-1" onchange="edit(this,'text')" class="change-text"> <br> 
+              size <input type="range" min="10" max="100" onchange="edit(this,'size')" class="size-picker"> <br>
+              color <input type="color" onchange="edit(this, 'fillStyle')" class="color-picker"> <br>                     
+              <i class="fa fa-arrows-alt"></i>
+              font <select type="font" onchange="edit(this, 'fontFamily')" class="font-picker"> 
+                            <option value="Georgia" class="georgia">Georgia </option>
+                            <option value="Verdana" class="verdana">Verdana </option>
+                            <option value='""Courier New"' class="courier-new">Courier New </option> 
+                            <option value="Fantasy" class="fantasy">Fantasy </option> 
+                   </select>
+                <br>
+                <div class="position-changers">
+                  <p>move:</p>
+                  <div class="top-arrows">
+                    <span onclick="moveTextByArrows('up')">&uarr;</span><span onclick="moveTextByArrows('down')">&darr;	</span>
+                  </div>
+                  <div class="left-arrows">
+                    <span onclick="moveTextByArrows('left')">&larr;</span ><span onclick="moveTextByArrows('right')">&rarr;</span>
+                  </div>
+                </div>
+                
             </div>
             <div>
             </div>
