@@ -61,7 +61,8 @@ function animateImgPicker(elImgPicker) {
 }
 function animateMemeGen(elMemeGen) {
     elMemeGen.classList.remove('hidden');
-    elImgPicker.childNodes.forEach(function (element) {
+    elMemeGen.childNodes.forEach(function (element) {
+        console.log(element);
         if (element.nodeType === 3) return;
         var animation = getRandomAnimationClass();
         element.classList.add('animated', animation);
