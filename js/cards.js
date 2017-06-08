@@ -16,7 +16,9 @@ function showCard(cardStr) {
                 animateImgPicker(newCard);
                 break;
             case 'meme-generator':
-                animateMemeGen();
+                animateMemeGen(newCard);
+                break;
+            case 'home':
                 break;
             default:
                 break;
@@ -27,6 +29,18 @@ function showCard(cardStr) {
     audio.play();
 
 }
+
+function animateHome() {
+    var elHome = document.querySelector('.home-container');
+    elHome.classList.add('animated', 'zoomInDown');
+    elHome.classList.remove('hidden');
+    elHome.classList.remove('animated', 'zoomInDown');
+    var audio = new Audio('../assets/home/animateHome-bringiton.mp3');
+    setTimeout(function () {
+        audio.play();
+    }, 1000);
+}
+
 function animateImgPicker(elImgPicker) {
     elImgPicker.classList.remove('hidden');
     elImgPicker.childNodes.forEach(function (element) {
@@ -43,9 +57,17 @@ function animateImgPicker(elImgPicker) {
     createKeywords(gImgs);
     addEventListener('resize', function () {
         displayImgs();
-        setTimeout(function () {
-            document.body.style.color = 'inherit';
-        }, 0);
+    });
+}
+function animateMemeGen(elMemeGen) {
+    elMemeGen.classList.remove('hidden');
+    elImgPicker.childNodes.forEach(function (element) {
+        if (element.nodeType === 3) return;
+        var animation = getRandomAnimationClass();
+        element.classList.add('animated', animation);
+        element.addEventListener('animationend', function () {
+            element.classList.remove('animated', animation);
+        })
     });
 }
 function animateOldCard(oldCard) {
