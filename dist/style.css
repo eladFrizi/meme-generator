@@ -335,8 +335,7 @@ button:hover {
     position: fixed;
     right: 10px;
     bottom: 10px;
-    top: initial;
-    background: red; }
+    top: initial; }
     @media screen and (min-width: 650px) {
       .meme-generator-container .editor-contianer {
         top: 10px;
@@ -387,18 +386,6 @@ button:hover {
 .font-picker .fantasy {
   font-family: Fantasy; }
 
-.position-changers {
-  display: flex;
-  flex-flow: column;
-  bottom: 1px solid black; }
-  .position-changers .left-arrows {
-    display: flex;
-    justify-content: center;
-    width: inherit; }
-  .position-changers .center-arrow {
-    display: flex;
-    justify-content: center; }
-
 .meme-text-picker-container {
   text-align: center; }
 
@@ -407,19 +394,30 @@ button:hover {
   width: 10px; }
 
 .edit-unit {
-  border: 1px solid black;
   padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
-  height: 43%; }
+  height: 43%;
+  width: 80%; }
   .edit-unit .editor-tools {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     height: 80%; }
+    .edit-unit .editor-tools .position-changers {
+      display: flex;
+      flex-flow: column;
+      bottom: 1px solid black; }
+      .edit-unit .editor-tools .position-changers .left-arrows {
+        display: flex;
+        justify-content: center;
+        width: inherit; }
+      .edit-unit .editor-tools .position-changers .center-arrow {
+        display: flex;
+        justify-content: center; }
   .edit-unit .finish-btn {
     margin-top: 5%;
     margin-left: 40%; }

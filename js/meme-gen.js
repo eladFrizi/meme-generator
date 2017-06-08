@@ -28,20 +28,20 @@ function getCanvasState(imgObj) {
     gCanvasState.openInEditor = document.querySelector('.meme-text-picker').value;
     gCanvasState.img = imgObj;
     gCanvasState.text1 = {
-        text: 'edit me text1',
+        text: 'Top Text',
         fillStyle: '#c11f1f',
         textAlign: 'center',
         left: 100,
-        top: 100,
+        top: 10,
         size: 30,
         fontFamily: 'Fantasy'
     }
     gCanvasState.text2 = {
-        text: 'edit me text2',
+        text: 'Bottom Text',
         fillStyle: '#eb42f4',
         textAlign: 'left',
         left: 100,
-        top: 10,
+        top: 100,
         size: 30,
         fontFamily: 'Verdana'
     }

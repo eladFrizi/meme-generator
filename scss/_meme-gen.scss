@@ -11,9 +11,7 @@
     position: fixed;
     right: 10px;
     bottom:10px ;
-    top: initial;
-    background: red;
-    
+    top: initial;    
 @media screen and (min-width: 650px) {
     top:10px;
     bottom:initial ;
@@ -82,21 +80,7 @@ canvas{
     }
 }
 
-.position-changers{
-    display: flex;
-    flex-flow: column;
-    // align-items: center;
-    bottom: 1px solid black;
-    .left-arrows{
-        display: flex;
-        justify-content: center;
-        width: inherit;
-    }
-    .center-arrow{
-        display: flex;
-        justify-content: center;
-    }
-}
+
 .meme-text-picker-container{
     text-align: center;
 }
@@ -107,22 +91,36 @@ canvas{
     width: 10px;
 }
     .edit-unit{
-    border: 1px solid black;
     padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
     height: 43%;
+    width: 80%;
     .editor-tools{
         display: flex;
         flex-direction: column;
         align-items: center; 
         justify-content: space-between;
         height: 80%;
+        .position-changers{
+            display: flex;
+            flex-flow: column;
+            bottom: 1px solid black;
+            .left-arrows{
+                display: flex;
+                justify-content: center;
+                width: inherit;
+            }
+            .center-arrow{
+                display: flex;
+                justify-content: center;
+    }
+}
 
     }
-        .finish-btn{
+    .finish-btn{
         margin-top: 5%;
         margin-left: 40%;
     }
