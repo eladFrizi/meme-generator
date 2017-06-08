@@ -1,7 +1,8 @@
 'use strict';
 
 function imgsInitDisplay() {
-    displayImgsByHex(gImgs, 1);
+    showCard('image-picker');
+    displayImgsByHex(gImgs);
     createKeywords(gImgs);
     addEventListener('resize', function () {
         displayImgs();
@@ -14,28 +15,10 @@ function imgsInitDisplay() {
 
 
 
-// deprecated
-// function getDisplayedImgs() {
-//     var displayedImgs = [];
-
-//     var elImageContainer = document.querySelector('.image-container');
-//     var elImgs = elImageContainer.querySelectorAll('img');
-
-//     for (var i = 0; i < elImgs.length; i++) {
-//         var idx = gImgs.findIndex(function (img) {
-//             return img.url === elImgs[i].getAttribute('src');
-//         });
-//         displayedImgs.push(gImgs[idx]);
-//     }
-
-//     return displayedImgs;
-// }
 
 /*
 MATCH SCORES:
-for every single match:
-first word match = searchTxtArr.length
-last word match = 1
+SEARCH_KEYWORD_LENGTH/IMAGE_KEYWORD_LENGTH)*SEARCH_KEYWORD_POSITION(first is num of keywords, last is 1)
 
 NOTE:it is possible that an img will appear twice and get more score)
  */

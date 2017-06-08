@@ -208,6 +208,9 @@ fieldset {
   height: 90%; }
 
 .home-container {
+  animation-name: zoomInDown;
+  animation-duration: 2s;
+  transition-duration: 2s;
   color: gray;
   text-align: center;
   position: absolute;
@@ -240,7 +243,7 @@ fieldset {
     width: 50px;
     height: 100px; }
   .image-picker-container .image-container img {
-    transition: 1s all;
+    opacity: 0.9;
     margin-top: -20px;
     margin-left: 10px;
     height: 100px;
@@ -336,3 +339,8 @@ fieldset {
     padding: 0;
     cursor: text;
     width: fit-content; }
+
+.home-container {
+  animation-name: zoomInDown;
+  animation-duration: 2s;
+  transition-duration: 2s; }

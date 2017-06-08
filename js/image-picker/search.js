@@ -17,8 +17,8 @@ function searchImgs() {
             var currKeyword = searchTxtArr[j];
             for (var k = 0; k < img.keywords.length; k++) { // iterating all img keywords(for every txt keyword) 
                 var imgKeyword = img.keywords[k];
-                if (currKeyword === imgKeyword) {
-                    searchResults = updateSearchResults(searchResults, i, searchTxtArr.length - j);
+                if (imgKeyword.includes(currKeyword)) {
+                    searchResults = updateSearchResults(searchResults, i, currKeyword.length/imgKeyword.length*(searchTxtArr.length - j));
                 }
             }
         }
@@ -26,8 +26,12 @@ function searchImgs() {
     searchResults = searchResults.sort(function (a, b) {
         return b.matchScore - a.matchScore;
     });
-    gSearch.searchImgs = searchResults;
-    displayImgs();
+    if (searchResults[0]) { // if at least one result found
+        gSearch.searchImgs = searchResults;
+        displayImgs();
+    } else {
+        document.querySelector('.image-container').innerHTML = '<h1>Sorry!</h1> there are no matching results.';
+    }
 }
 
 function updateSearchResults(searchResults, imgIdx, score) {

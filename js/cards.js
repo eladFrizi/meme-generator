@@ -1,54 +1,33 @@
 'use strict';
 
-var gCurrCardStr = 'home';
-
 function getCardByClass(className) {
     return document.querySelector('.' + className);
 }
 
-function showCard(cardStr, navBtn) {
+function showCard(cardStr) {
     if (cardStr === gCurrCardStr) return;
     var oldCard = getCardByClass(gCurrCardStr);
     var newCard = getCardByClass(cardStr);
-    fadeOut(oldCard);
-    setTimeout(function () {
-        fadeIn(newCard);
-    }, 250);
 
+    animateNewCard(newCard);
+    animateOldCard(oldCard);
     gCurrCardStr = cardStr;
-}
 
-function fadeOut(el) {
-    var op = 1;
-    var sc = 1;
-    el.style.opacity = op;
-    var timer = setInterval(function () {
-        if (op <= 0) {
-            el.classList.add('hidden');
-            el.style.transform = 'translate(-50%,-50%) scale(1)';
-            clearInterval(timer);
-        }
-        el.style.opacity = op;
-        el.style.transform = 'translate(-50%,-50%) scale(' + sc + ')';
-        op -= 0.1;
-        sc -= 0.03;
-    }, 25);
-}
+    var audio = new Audio('../assets/showCard-grunt.mp3');
+        audio.play();
 
-function fadeIn(el) {
-    var op = 0;
-    var sc = 0.7;
-    el.style.opacity = op;
-    el.classList.remove('hidden');
-    var timer = setInterval(function () {
-        if (op >= 1.0) {
-            clearInterval(timer);
-            el.style.transform = 'translate(-50%,-50%) scale(1)';
-            return;
-        }
-        el.style.opacity = op;
-        el.style.transform = 'translate(-50%,-50%) scale(' + sc + ')';
-        sc += 0.03;
-        op += 0.1;
-    }, 25);
+}
+function animateNewCard(newCard) {
+    newCard.classList.add('animated', 'zoomInRight');
+    newCard.classList.remove('hidden');
+    newCard.addEventListener('animationend', function asd() {
+        newCard.classList.remove('animated', 'zoomInRight');
+    });
+}
+function animateOldCard(oldCard) {
+    oldCard.classList.add('animated', 'fadeOut');
+    oldCard.addEventListener('animationend', function asd() {
+        oldCard.classList.remove('animated', 'fadeOut');
+        oldCard.classList.add('hidden');
+    });
 }
