@@ -3,7 +3,8 @@
 
 .meme-generator-container{
     border: 2px solid green;
-    display: inline-block;flex-direction: column;
+    display: inline-block;
+    flex-direction: column;
 
 .editor-contianer{
     position: fixed;
@@ -27,8 +28,9 @@
 
 }
 canvas{
-    height: 60vh;
-    width: auto;
+    // height: 60vh;
+    // width: auto;
+    max-width: 90vw;
     @media screen and (min-width: 650px) {
     width: auto;
     height: auto;
@@ -40,10 +42,12 @@ canvas{
 .drag-el{
     margin: 0;
     padding: 0px;
-    display: block;
     cursor: pointer;
     width:auto;
     padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     p{
         margin: 0;
         padding: 0;
@@ -66,3 +70,36 @@ canvas{
 
 }
 
+.font-picker{
+
+    .georgia{
+        font-family: Georgia;
+    }
+    .verdana{
+        font-family: Verdana;
+    }
+    .courier-new{
+        font-family: "Courier New";
+    }
+    .fantasy{
+        font-family: Fantasy;
+    }
+}
+
+.position-changers{
+    display: flex;
+    flex-flow: column;
+    bottom: 1px solid black;
+    div{
+        display: flex;
+        justify-content: space-between;
+        width:15%;
+    }
+}
+
+
+
+.movement-btn{
+    height: 10px;
+    width: 10px;
+}
