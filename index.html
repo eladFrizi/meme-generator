@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meme Generator</title>
   <link rel="stylesheet" href="dist/style.css">
+  <link rel="stylesheet" href="/node_modules/animate.css/animate.min.css">
   <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
 
 </head>
@@ -23,14 +24,14 @@
     </div>
   </div>
   <div class="main-container">
-    <img class="jackie-chan" src="assets/home/jackie-chan.jpg" />
+    <!--<img class="jackie-chan" src="assets/home/jackie-chan.jpg" />
     <img class="hitting-keyboard" src="assets/home/hitting-keyboard.jpg" />
     <img class="winter-is-coming" src="assets/home/winter-is-coming.jpg" />
-    <img class="troll-face" src="assets/home/troll-face.jpg" />
+    <img class="troll-face" src="assets/home/troll-face.jpg" />-->
     <div class="card home">
-      <div class="home-container">
+      <div class="home-container hidden">
         <h1>Meme Generator</h1>
-        <a href="#image-picker" onclick="showCard('image-picker')">
+        <a href="#image-picker" onclick="imgsInitDisplay()">
         <img src="assets/home/main.jpg" />
         </a>
         <h6>By Elad Frizi & Snir Shechter</h6>
@@ -102,14 +103,12 @@
             <h2>Get In Touch</h2>
             <h5>In order to get in touch use the contact form below</h5>
           </div>
-          <form action="">
-            <input type="text" placeholder="Name (Required)" class="contact-name"><br/>
-            <input type="email" placeholder="Email (Required)" class="contact-email"> <br>
-            <input type="text" placeholder="Subject" class="contact-subject"><br>
+          <form action="" onsubmit="return false;">
+            <input type="text" placeholder="Name (Required)" class="contact-name" required /><br/>
+            <input type="email" placeholder="Email (Required)" class="contact-email" required /> <br>
+            <input type="text" placeholder="Subject" class="contact-subject" /><br>
             <textarea placeholder="Write your message here..." class="contact-text"></textarea>
-            <div class="btn-container">
-              <button>send</button>
-            </div>
+              <input type="submit" onclick="saveMsgToLocalStorage(this);" />
           </form>
         </div>
         <div class="form-dis">
@@ -131,6 +130,7 @@
   <script src="js/cards.js"></script>
   <script src="js/main.js"></script>
   <script src="js/meme-gen.js"></script>
+  <script src="js/contact.js"></script>
 </body>
 
 </html>
