@@ -51,7 +51,6 @@ function adjustEditor(select) {
     gCanvasState.openInEditor = select.value;
     var currentInfoToShow = gCanvasState[gCanvasState.openInEditor];
     var editUnit = document.querySelector('.edit-unit');
-    console.log(currentInfoToShow)
     editUnit.querySelector('.font-picker').value = currentInfoToShow.fontFamily;
     editUnit.querySelector('.color-picker').value = currentInfoToShow.fillStyle;
     editUnit.querySelector('.size-picker').value = currentInfoToShow.size;
@@ -170,9 +169,6 @@ function moveTextByArrows(direction) {
         draggedElement.style.left = newLeft + 'px';
         gCanvasState[data].top = newTop;
         gCanvasState[data].left = newLeft;
-        // console.log(gCanvasState[data].top, newTop)
-        console.log(gCanvasState[data].left, newLeft)
-
     }
 
 
