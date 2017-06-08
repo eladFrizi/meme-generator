@@ -27,9 +27,11 @@
 
 }
 canvas{
-    width: 85vw;
+    height: 60vh;
+    width: auto;
     @media screen and (min-width: 650px) {
     width: auto;
+    height: auto;
 }
 }
 

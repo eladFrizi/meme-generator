@@ -330,10 +330,12 @@ fieldset {
     position: relative;
     z-index: 10; }
   .meme-generator-container canvas {
-    width: 85vw; }
+    height: 60vh;
+    width: auto; }
     @media screen and (min-width: 650px) {
       .meme-generator-container canvas {
-        width: auto; } }
+        width: auto;
+        height: auto; } }
 
 .drag-el {
   margin: 0;
