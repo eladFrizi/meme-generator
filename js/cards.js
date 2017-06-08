@@ -19,19 +19,19 @@ function showCard(cardStr) {
                 animateMemeGen(newCard);
                 break;
             case 'home':
+            animateHome();
                 break;
             default:
                 break;
         }
     }, 1500);
     gCurrCardStr = cardStr;
-    var audio = new Audio('../assets/showCard-grunt.mp3');
-    audio.play();
 
 }
 
 function animateHome() {
     var elHome = document.querySelector('.home-container');
+    elHome.parentNode.classList.remove('hidden');
     elHome.classList.add('animated', 'zoomInDown');
     elHome.classList.remove('hidden');
     elHome.classList.remove('animated', 'zoomInDown');
@@ -42,6 +42,8 @@ function animateHome() {
 }
 
 function animateImgPicker(elImgPicker) {
+    var audio = new Audio('../assets/showCard-grunt.mp3');
+    audio.play();
     elImgPicker.classList.remove('hidden');
     elImgPicker.childNodes.forEach(function (element) {
         if (element.nodeType === 3) return;
@@ -61,6 +63,8 @@ function animateImgPicker(elImgPicker) {
 }
 
 function animateMemeGen(elMemeGen) {
+    var audio = new Audio('../assets/showCard-grunt.mp3');
+    audio.play();
     elMemeGen.classList.remove('hidden');
     elMemeGen.childNodes.forEach(function (element) {
         if (element.nodeType === 3) return;

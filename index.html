@@ -17,10 +17,13 @@
         <li>
           <span onclick="goCardBack()">⇐ <span class="navtxt">Back</span></span>
           <span onclick="translatePage()">漢 <span class="navtxt">Language</span></span>
+          <span class="donate"><a href="https://www.paypal.com/">&#127866; <span class="navtxt">Donate</span></a>
+          </span>
         </li>
         <li>
-          <span onclick="handleClick('.about')" class="btn">🖺 <span class="navtxt">about</span></span>
-          <span onclick="handleClick('.contact')">✆ <span class="navtxt">contact</span></span>
+          <span onclick="handleClick('.main-container')">🏠 <span class="navtxt">Main</span></span>
+          <span onclick="handleClick('.about')">🖺 <span class="navtxt">About</span></span>
+          <span onclick="handleClick('.contact')">✆ <span class="navtxt">Contact</span></span>
         </li>
       </ul>
     </div>
@@ -99,7 +102,7 @@
 
   <div class="about">
     <figure>
-      <img src="assets/about/face.png">
+      <img src="assets/about/snir.jpg">
       <figcaption>
         <h2>Snir Shechter</h2>
         <h4>Frontend Programmer</h4>
@@ -108,6 +111,12 @@
           start B.sc studies in computer-science, preferably in Technion university in Haifa,Israel.
         </p>
       </figcaption>
+      <div class="socialbtns">
+        <a href="https://www.facebook.com/MarBahur"><img src="assets/contact/facebook.png"/></a>
+        <a href="https://twitter.com/"><img src="assets/contact/twitter.png"/></a>
+        <a href="https://www.linkedin.com/uas/login"><img src="assets/contact/linkedin.png"/></a>
+        <a href="https://plus.google.com/105471152039995524403"><img src="assets/contact/gplus.png"/></a>
+      </div>
     </figure>
     <figure>
       <img src="assets/about/face.png">
@@ -119,6 +128,12 @@
           molestias rem nam enim maxime animi aut ullam reprehenderit tenetur. A, debitis voluptas?
         </p>
       </figcaption>
+      <div class="socialbtns">
+        <a href="https://www.facebook.com/MarBahur"><img src="assets/contact/facebook.png"/></a>
+        <a href="https://twitter.com/"><img src="assets/contact/twitter.png"/></a>
+        <a href="https://www.linkedin.com/uas/login"><img src="assets/contact/linkedin.png"/></a>
+        <a href="https://plus.google.com/105471152039995524403"><img src="assets/contact/gplus.png"/></a>
+      </div>
     </figure>
     <div class="contact">
       <div class="form-wrap">
@@ -126,26 +141,24 @@
           <h2>Get In Touch</h2>
           <h5>In order to get in touch use the contact form below</h5>
         </div>
-        <form action="" onsubmit="return false;">
+        <form onsubmit="return false;">
           <input type="text" placeholder="Name (Required)" class="contact-name" required /><br/>
           <input type="email" placeholder="Email (Required)" class="contact-email" required /> <br>
           <input type="text" placeholder="Subject" class="contact-subject" /><br>
           <textarea placeholder="Write your message here..." class="contact-text"></textarea>
-          <input type="submit" onclick="saveMsgToLocalStorage(this);" />
+          <input type="submit" value="Submit" onclick="saveMsgToLocalStorage(this);" />
         </form>
       </div>
       <div class="form-dis">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga distinctio incidunt eum cumque ipsam natus enim dolorem
-          quis facere praesentium a temporibus optio possimus aliquam tempora, itaque doloremque voluptate, exercitationem.</p>
+        <p>You can find us on Neverland. transportation available via fairies, little kids who can fly and one-eyed pirates.</p>
         <p><span>🖈</span>Neverland<br/><span>✉</span>support@nowhere.com<br/><span>🕿</span>+1 111 111112</p>
       </div>
     </div>
   </div>
 
   <script src="node_modules/smoothscroll/smoothscroll.js"></script>
-  <script src="js/interact.js"></script>
   <script src="js/utils.js"></script>
-  <script src="js/scroll.js"></script>
+  <script src="js/navbar.js"></script>
   <script src="js/image-picker/image-picker.js"></script>
   <script src="js/image-picker/imgs-display.js"></script>
   <script src="js/image-picker/imgs-pagination.js"></script>

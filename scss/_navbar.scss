@@ -9,39 +9,44 @@
     font-weight: bold;
     transition: top 0.3s ease;
     .nav-wrap{
-    padding-bottom: 10px;
-    width: 100%;
-    background: #202020;
-    display: flex;
-    justify-content: center;
-    ul{
-        width:100%;
-        height: 40px;
-        list-style: none;
+        padding-bottom: 10px;
+        width: 100%;
+        background: #202020;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        color: #f1f1f1;
-        li{
-            margin:0px 2%;
-            cursor: pointer;
+        justify-content: center;
+        ul{
+            width:100%;
+            height: 40px;
+            list-style: none;
             display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
             justify-content: space-between;
-            align-content: center;
-            align-items: center;
-            span{
-                margin:10px;
-        }
-        @media screen and (max-width: 500px) {
-                li span{
-                    margin:100px;
+            color: #f1f1f1;
+            li{
+                margin:0px 2%;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-content: center;
+                align-items: center;
+                span{
+                    margin:10px;
+                    filter: grayscale(100%);
                 }
-                .navtxt{
-                    display: none;
+                @media screen and (max-width: 750px) {
+                    li{
+                        // margin:20px;
+                    }
+                    span{
+                        margin:10px;
+                    }
+                    .navtxt{
+                        display: none;
+                    }
                 }
             }
         }
-    }
     }
     .show-arrow{
         position: absolute;

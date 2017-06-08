@@ -122,6 +122,7 @@ button:hover {
       height: 40px;
       list-style: none;
       display: flex;
+      flex-wrap: nowrap;
       flex-direction: row;
       justify-content: space-between;
       color: #f1f1f1; }
@@ -133,10 +134,11 @@ button:hover {
         align-content: center;
         align-items: center; }
         .navbar .nav-wrap ul li span {
-          margin: 10px; }
-        @media screen and (max-width: 500px) {
-          .navbar .nav-wrap ul li li span {
-            margin: 100px; }
+          margin: 10px;
+          filter: grayscale(100%); }
+        @media screen and (max-width: 750px) {
+          .navbar .nav-wrap ul li span {
+            margin: 10px; }
           .navbar .nav-wrap ul li .navtxt {
             display: none; } }
   .navbar .show-arrow {
@@ -170,6 +172,9 @@ button:hover {
   @media screen and (min-width: 700px) {
     .about {
       flex-flow: row wrap; } }
+  .about .socialbtns img {
+    height: 40px;
+    width: 40px; }
   .about figure {
     margin: 0;
     display: flex;
@@ -280,6 +285,7 @@ button:hover {
     .contact .form-wrap ::placeholder {
       color: #bebebe; }
     .contact .form-wrap input {
+      color: #bebebe;
       font-family: --secondary-font;
       width: 100%;
       margin: 10px 0;
@@ -287,6 +293,7 @@ button:hover {
       border: none;
       padding: 10px; }
     .contact .form-wrap textarea {
+      color: #bebebe;
       height: 10em;
       width: 100%;
       margin: 10px 0;

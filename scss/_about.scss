@@ -7,8 +7,12 @@
     @media screen and (min-width: 700px) {
         flex-flow: row wrap;
         }
-
-
+    .socialbtns{
+        img{
+            height: 40px;
+            width: 40px;
+        }
+    }
     figure{
         margin: 0;
         display: flex;
@@ -20,7 +24,6 @@
         flex-flow: column nowrap;
         justify-content: space-between;
         }
-
         img{
             height: 200px;
             width: 200px;
