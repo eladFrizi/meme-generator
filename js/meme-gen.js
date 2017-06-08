@@ -82,12 +82,10 @@ function renderTxts(state) {
             divOverCanvas.innerHTML = `<p contenteditable="true">${textKey.text}</p>`;
             divOverCanvas.style.maxWidth = canvasCover.width;
             divOverCanvas.style.position = 'absolute';
-            // divOverCanvas.style.width = '100%';
             divOverCanvas.style.overflowWrap = 'break-word';
             divOverCanvas.style.top = textKey.top + 'px';
             divOverCanvas.style.left = textKey.left + 'px';
             divOverCanvas.style.fontSize = textKey.size + 'px';
-            // divOverCanvas.style.textAlign = textKey.textAlign;
             divOverCanvas.style.fontFamily = textKey.fontFamily;
             divOverCanvas.style.color = textKey.fillStyle;
             divOverCanvas.style.zIndex = 50;
@@ -206,8 +204,6 @@ function moveTextByArrows(direction) {
     }
 
     function printOnCanvas() {
-        // createCanvasWithImage(gCanvasState);
-        // var ghb = document.querySelector('.canvas-container').offsetTop -25;
         var c = document.getElementById("myCanvas");
         for (prop in gCanvasState) {
             if (prop.substring(0, 4) === 'text') {
