@@ -49,46 +49,65 @@
     </div>
     <div class="card meme-generator hidden">
       <div class="modal-img" hidden>
-        <img src="assets/close-btn.png"
+        <img src="assets/close-btn.png" onclick="closeModal()">
       </div>
       <div class="meme-generator-container">
         <div class="canvas-container" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
         <!--<div class="editor-contianer">-->
-          <div class="edit-unit">
-            <h2> Text - Editor </h2>
-            <button onclick="addNewText()">add new text</button>
-            <p>Select text to edit on pic
-              <select onchange="adjustEditor(this)" class="meme-text-picker">
+        <div class="edit-unit">
+          <div class="editor-tools">
+          <h2> Text - Editor </h2>
+          <button onclick="addNewText()">add new text</button>
+          <div class="meme-text-picker-container">
+            <p>Select text to edit on pic</p>
+            <select onchange="adjustEditor(this)" class="meme-text-picker">
                           <option value="text1">Top - text</option>
                           <option value="text2">Bottom - text</option>
               </select>
-            </p>
-            <div class="editor-tools">
-              <input type="text" placeholder="edit me text-1" onchange="edit(this,'text')" class="change-text"> <br> size
-              <input type="range" min="10" max="100" onchange="edit(this,'size')" class="size-picker"> <br> color
-              <input
-                type="color" onchange="edit(this, 'fillStyle')" class="color-picker"> <br>
-                <i class="fa fa-arrows-alt"></i> font <select type="font" onchange="edit(this, 'fontFamily')" class="font-picker"> 
+          </div>
+          <div>
+              <p> change content</p>
+              <input type="text" placeholder="edit me text-1" onchange="edit(this,'text')" class="change-text">
+          </div>
+          </div>
+            <button onclick="finishCLicked()" class="finish-btn">Generate Image</button>
+
+
+          <div class="editor-tools">
+            <div class="position-changers">
+              <p>move</p>
+              <div class="center-arrow">
+                <button onclick="moveTextByArrows('up')">&uarr;</button>
+              </div>
+              <div class="left-arrows">
+                <button onclick="moveTextByArrows('left')">&larr;</button >
+                    <button onclick="moveTextByArrows('right')">&rarr;</button>
+              </div>
+              <div class="center-arrow">
+              <button onclick="moveTextByArrows('down')">&darr;	</button>
+            </div>
+            </div>
+            <br/><span> size </span><br/>
+            <input type="range" min="10" max="100" onchange="edit(this,'size')" class="size-picker">
+            <p>color </p>
+            <input type="color" onchange="edit(this, 'fillStyle')" class="color-picker"> <br>
+            <i class="fa fa-arrows-alt"></i> font <select type="font" onchange="edit(this, 'fontFamily')" class="font-picker"> 
                             <option value="Georgia" class="georgia">Georgia </option>
                             <option value="Verdana" class="verdana">Verdana </option>
                             <option value='""Courier New"' class="courier-new">Courier New </option> 
                             <option value="Fantasy" class="fantasy">Fantasy </option> 
                    </select>
-                <br>
-                <div class="position-changers">
-                  <p>move:</p>
-                  <div class="top-arrows">
-                    <span onclick="moveTextByArrows('up')">&uarr;</span><span onclick="moveTextByArrows('down')">&darr;	</span>
-                  </div>
-                  <div class="left-arrows">
-                    <span onclick="moveTextByArrows('left')">&larr;</span ><span onclick="moveTextByArrows('right')">&rarr;</span>
-                  </div>
-                </div>
 
-            </div>
-            <div>
-            </div>
+          </div>
+          <div>
+          </div>
           <!--</div>-->
+        
+        
+        
+        
+        
+      
         </div>
       </div>
     </div>
@@ -106,13 +125,13 @@
       </figcaption>
     </figure>
     <figure>
-      <img src="assets/about/face.png">
+      <img src="assets/about/elad.jpg">
       <figcaption>
         <h2>Elad Frizi</h2>
         <h4>Frontend Programmer</h4>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi accusantium ducimus, alias, repellat iusto ipsam neque quaerat
-          molestias rem nam enim maxime animi aut ullam reprehenderit tenetur. A, debitis voluptas?
+          20 years old, born in Gan-Ner(litle village in north israel) and currently live in TLV. I am aspire web developer with a lot of motivation and ambition.
+          Beside that i am a  cool and nice guy who want to find himself in a cool and nice place. 
         </p>
       </figcaption>
     </figure>

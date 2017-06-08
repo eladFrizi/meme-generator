@@ -308,8 +308,11 @@ button:hover {
       border: none;
       padding: 5px 10px; }
 
+.meme-generator {
+  display: flex;
+  justify-content: center; }
+
 .meme-generator-container {
-  border: 2px solid green;
   display: inline-block;
   flex-direction: column; }
   .meme-generator-container .editor-contianer {
@@ -322,9 +325,6 @@ button:hover {
       .meme-generator-container .editor-contianer {
         top: 10px;
         bottom: initial; } }
-    .meme-generator-container .editor-contianer .edit-unit {
-      border: 1px solid black;
-      padding: 10px; }
   .meme-generator-container .canvas-container {
     position: relative;
     z-index: 10; }
@@ -340,7 +340,6 @@ button:hover {
   padding: 0px;
   cursor: pointer;
   width: auto;
-  padding: 5px;
   display: flex;
   flex-direction: column;
   align-items: center; }
@@ -376,14 +375,38 @@ button:hover {
   display: flex;
   flex-flow: column;
   bottom: 1px solid black; }
-  .position-changers div {
+  .position-changers .left-arrows {
     display: flex;
-    justify-content: space-between;
-    width: 15%; }
+    justify-content: center;
+    width: inherit; }
+  .position-changers .center-arrow {
+    display: flex;
+    justify-content: center; }
+
+.meme-text-picker-container {
+  text-align: center; }
 
 .movement-btn {
   height: 10px;
   width: 10px; }
+
+.edit-unit {
+  border: 1px solid black;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 43%; }
+  .edit-unit .editor-tools {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 80%; }
+  .edit-unit .finish-btn {
+    margin-top: 5%;
+    margin-left: 40%; }
 
 .home-container {
   animation-name: zoomInDown;

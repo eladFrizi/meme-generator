@@ -51,6 +51,7 @@ function adjustEditor(select) {
     gCanvasState.openInEditor = select.value;
     var currentInfoToShow = gCanvasState[gCanvasState.openInEditor];
     var editUnit = document.querySelector('.edit-unit');
+    console.log(currentInfoToShow)
     editUnit.querySelector('.font-picker').value = currentInfoToShow.fontFamily;
     editUnit.querySelector('.color-picker').value = currentInfoToShow.fillStyle;
     editUnit.querySelector('.size-picker').value = currentInfoToShow.size;
@@ -60,6 +61,7 @@ function adjustEditor(select) {
 function createCanvasWithImage(canvasState) {
     var elImg = new Image();
     elImg.src = canvasState.img.url;
+    console.log(elImg.src)
     var canvasSTR = `<canvas id="myCanvas" width="${elImg.width}" height="${elImg.height}" style="border:1px solid #d3d3d3;">`
     document.querySelector('.canvas-container').innerHTML = canvasSTR;
     var c = document.getElementById("myCanvas");
@@ -159,9 +161,9 @@ function moveTextByArrows(direction) {
     function drop(ev, fatherEl) {
         var data = ev.dataTransfer.getData("text");
         var draggedElement = document.querySelector('#' + data);
-        var newTop = (ev.pageY - fatherEl.offsetTop - diffrenceBetweenTextAndCanvas - 5 );
-        var newLeft = (ev.pageX - fatherEl.offsetLeft - draggedElement.offsetWidth);
-        if (newTop < -5 || newTop > fatherEl.clientHeight - draggedElement.clientHeight) {
+        var newTop = (ev.pageY - fatherEl.offsetTop  );
+        var newLeft = (ev.pageX - fatherEl.offsetLeft - (draggedElement.offsetWidth / 2));
+        if (newTop < -5 || newTop > fatherEl.clientHeight - draggedElement.clientHeight -draggedElement.height) {
             newTop = fatherEl.clientHeight - draggedElement.clientHeight;
         }
         if (newLeft < 0) newLeft = 0;
@@ -169,6 +171,9 @@ function moveTextByArrows(direction) {
         draggedElement.style.left = newLeft + 'px';
         gCanvasState[data].top = newTop;
         gCanvasState[data].left = newLeft;
+        // console.log(gCanvasState[data].top, newTop)
+        console.log(gCanvasState[data].left, newLeft)
+
     }
 
 
@@ -203,7 +208,6 @@ function moveTextByArrows(direction) {
         var c = document.getElementById("myCanvas");
         for (prop in gCanvasState) {
             if (prop.substring(0, 4) === 'text') {
-
                 var left = (c.width / c.offsetWidth) * gCanvasState[prop].left;
                 var top = (c.height / c.offsetHeight) * gCanvasState[prop].top + (+gCanvasState[prop].size);
                 var ctx = c.getContext("2d");
@@ -219,6 +223,7 @@ function moveTextByArrows(direction) {
     function convertCanvasToImage() {
         var image = new Image();
         image.src = document.querySelector('canvas').toDataURL("image/png");
+        image.classList.add('final-image')
         return image;
     }
 
@@ -234,4 +239,11 @@ function moveTextByArrows(direction) {
         openModalAndPrintPImage(elImage)
     }
 
-
+function closeModal(){
+    var modal = document.querySelector('.modal-img');
+    imageToRemove = modal.querySelector('.final-image')
+    modal.style.display = 'none';
+    modal.removeChild(imageToRemove);
+    createCanvasWithImage(gCanvasState);
+    renderTxts(gCanvasState);
+}
