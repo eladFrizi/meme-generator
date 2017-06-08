@@ -15,7 +15,5 @@ function goCardBack() {
         case 'meme-generator':
             showCard('image-picker');
             break;
-        default:
-            break;
     }
 }
