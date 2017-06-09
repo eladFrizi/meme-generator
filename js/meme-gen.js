@@ -171,9 +171,6 @@ function moveTextByArrows(direction) {
         draggedElement.style.left = newLeft + 'px';
         gCanvasState[data].top = newTop;
         gCanvasState[data].left = newLeft;
-        // console.log(gCanvasState[data].top, newTop)
-        console.log(gCanvasState[data].left, newLeft)
-
     }
 
 
