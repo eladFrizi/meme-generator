@@ -57,13 +57,12 @@
       <div class="image-container"></div>
     </div>
     <div class="card meme-generator hidden">
-      <div class="modal-img" hidden>
-        <img src="assets/close-btn.png" onclick="closeModal()">
-      </div>
+      <div class="modal-img" hidden><img src="assets/close-btn.png" onclick="closeModal()"></div>
       <div class="meme-generator-container">
         <div class="canvas-container" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
         <div class="edit-unit">
           <div class="editor-tools">
+<<<<<<< HEAD
           <h3> Text - Editor </h3>
           <button onclick="addNewText()">add new text</button>
           <div class="meme-text-picker-container">
@@ -71,56 +70,48 @@
             <select onchange="adjustEditor(this)" class="meme-text-picker">
                           <option value="text1">Top - text</option>
                           <option value="text2">Bottom - text</option>
+=======
+            <h2> Text Editor </h2>
+            <button onclick="addNewText()">Add New Text</button>
+            <div class="meme-text-picker-container">
+              <p>Select On the text to edit</p>
+              <select onchange="adjustEditor(this)" class="meme-text-picker">
+                          <option value="text1">Top text</option>
+                          <option value="text2">Bottom text</option>
+>>>>>>> fa81ff5dd72ca51ec3111fe82bd74a06af834352
               </select>
-          </div>
-          <div>
-              <p> change content</p>
+            </div>
+            <div>
+              <p>Change Content</p>
               <input type="text" placeholder="edit me text-1" onchange="edit(this,'text')" class="change-text">
+            </div>
           </div>
-          </div>
-            <button onclick="finishCLicked()" class="finish-btn">Generate Image</button>
-
-
+          <button onclick="finishCLicked()" class="finish-btn">Generate Image</button>
           <div class="editor-tools">
             <div class="position-changers">
-              <p>move</p>
-              <div class="center-arrow">
-                <button onclick="moveTextByArrows('up')">&uarr;</button>
-              </div>
-              <div class="left-arrows">
-                <button onclick="moveTextByArrows('left')">&larr;</button >
-                    <button onclick="moveTextByArrows('right')">&rarr;</button>
-              </div>
-              <div class="center-arrow">
-              <button onclick="moveTextByArrows('down')">&darr;	</button>
+              <p>Move</p>
+              <div class="center-arrow"><button onclick="moveTextByArrows('up')">&uarr;</button></div>
+              <div class="left-arrows"><button onclick="moveTextByArrows('left')">&larr;</button ><button onclick="moveTextByArrows('right')">&rarr;</button></div>
+              <div class="center-arrow"><button onclick="moveTextByArrows('down')">&darr;	</button></div>
             </div>
+            <br/><span> Size </span><br/>
+            <input type="range" min="10" max="100" onchange="edit(this,'size')" class="size-picker" />
+            <p>Color </p>
+            <input type="color" onchange="edit(this, 'fillStyle')" class="color-picker" /> <br />
+            <p>Font</p>
+            <select type="font" onchange="edit(this, 'fontFamily')" class="font-picker" />
+            <option value="Georgia" class="georgia">Georgia </option>
+            <option value="Verdana" class="verdana">Verdana </option>
+            <option value='""Courier New"' class="courier-new">Courier New </option>
+            <option value="Fantasy" class="fantasy">Fantasy </option>
+            </select>
             </div>
-            <br/><span> size </span><br/>
-            <input type="range" min="10" max="100" onchange="edit(this,'size')" class="size-picker">
-            <p>color </p>
-            <input type="color" onchange="edit(this, 'fillStyle')" class="color-picker"> <br>
-            <i class="fa fa-arrows-alt"></i> font <select type="font" onchange="edit(this, 'fontFamily')" class="font-picker"> 
-                            <option value="Georgia" class="georgia">Georgia </option>
-                            <option value="Verdana" class="verdana">Verdana </option>
-                            <option value='""Courier New"' class="courier-new">Courier New </option> 
-                            <option value="Fantasy" class="fantasy">Fantasy </option> 
-                   </select>
-
+            <div>
           </div>
-          <div>
-          </div>
-          <!--</div>-->
-        
-        
-        
-        
-        
-      
         </div>
       </div>
     </div>
   </div>
-
   <div class="about">
     <figure>
       <img src="assets/about/snir.jpg">
@@ -145,8 +136,9 @@
         <h2>Elad Frizi</h2>
         <h4>Frontend Programmer</h4>
         <p>
-          20 years old, born in Gan-Ner(litle village in north israel) and currently live in TLV. I am aspire web developer with a lot of motivation and ambition.
-          Beside that i am a  cool and nice guy who want to find himself in a cool and nice place. 
+          20 years old, born in Gan-Ner(litle village in north israel) and currently live in TLV. I am aspire web developer with a
+          lot of motivation and ambition. Beside that i am a cool and nice guy who want to find himself in a cool and nice
+          place.
         </p>
       </figcaption>
       <div class="socialbtns">
@@ -188,6 +180,7 @@
   <script src="js/main.js"></script>
   <script src="js/meme-gen.js"></script>
   <script src="js/contact.js"></script>
+
 </body>
 
 </html>
