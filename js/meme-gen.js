@@ -72,7 +72,7 @@ function createCanvasWithImage(canvasState) {
 
 function renderTxts(state) {
     createCanvasWithImage(state)
-    for (prop in state) {
+    for (var prop in state) {
         var checker = prop.substring(0, 4)
         if (checker === 'text') {
             var canvasCover = document.querySelector(".canvas-container");
