@@ -203,7 +203,7 @@ function moveTextByArrows(direction) {
 
     function printOnCanvas() {
         var c = document.getElementById("myCanvas");
-        for (prop in gCanvasState) {
+        for (var prop in gCanvasState) {
             if (prop.substring(0, 4) === 'text') {
                 var left = (c.width / c.offsetWidth) * gCanvasState[prop].left;
                 var top = (c.height / c.offsetHeight) * gCanvasState[prop].top + (+gCanvasState[prop].size);
@@ -238,7 +238,7 @@ function moveTextByArrows(direction) {
 
 function closeModal(){
     var modal = document.querySelector('.modal-img');
-    imageToRemove = modal.querySelector('.final-image')
+    var imageToRemove = modal.querySelector('.final-image')
     modal.style.display = 'none';
     modal.removeChild(imageToRemove);
     createCanvasWithImage(gCanvasState);
